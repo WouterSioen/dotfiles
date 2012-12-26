@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# don't put duplicate lines in the history
+export HISTCONTROL=ignoredups
+
+# let the history ignore the following commands
+export HISTIGNORE="ls:ll:la:pwd:clear:h:j"
+
+# Make ls & grep pretty
+export CLICOLOR=1
+export GREP_OPTIONS='--color=auto'
+
+# Paths
+export PATH=$PATH:/usr/local/mysql/bin
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.knife:$PATH"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH

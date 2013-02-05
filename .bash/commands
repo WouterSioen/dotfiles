@@ -5,3 +5,19 @@ git_branch()
 {
 	git branch --no-color 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(branch: \1)/'
 }
+
+# creates an SSH key and uploads it to the given host
+addsshkey()
+{
+	username=$1
+	hostname=$2
+
+	if [[ "$username" == "" ]] || [[ "$hostname" == "" ]]
+	then
+		echo "usage: addsshkey <username> <hostname>"
+	else
+		ssh $username@$hostname 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+
+		tput bold; ssh -o PasswordAuthentication=no $username@$hostname true && { tput setaf 2; echo 'Success!'; } || { tput setaf 1; echo 'Failure'; }; tput sgr0
+	fi
+}

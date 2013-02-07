@@ -4,4 +4,8 @@
 alias gco='git co'
 alias gci='git ci'
 alias grb='git rb'
+
+alias gip='git pull'
+alias gic='git cherry-pick'
+
 alias check='phpcs -v --standard="$HOME/.phpcs/Fork" --extensions=php --report=full'

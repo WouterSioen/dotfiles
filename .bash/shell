@@ -10,6 +10,9 @@ export HISTIGNORE="ls:ll:la:pwd:clear:h:j"
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 
+# Make phpUnit pretty
+alias phpunit='phpunit --color'
+
 # make ls pretty on ubuntu
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

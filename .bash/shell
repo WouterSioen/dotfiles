@@ -25,8 +25,31 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Paths
-export PATH=$PATH:/usr/local/mysql/bin
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.knife:$PATH"
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+########################################################################
+# PATH
+########################################################################
+
+# list the directories we want to add to the PATH variable, if they exist.
+paths_to_add=(
+  "$HOME/bin"
+  # MySQL
+  /usr/local/mysql/bin
+  # Homebrew
+  /usr/local/{,s}bin
+  # System
+  /{,s}bin
+  /usr/{,s}bin
+  # Git
+  /usr/local/git/bin
+  # Fork CLI tool
+  "$HOME/.knife"
+  # .bash folder
+  "$HOME/.bash"
+  # Others
+  /opt/local/bin
+  /opt/local/sbin
+);
+
+# Now implode everything into the new PATH variable.
+printf -v PATH "%s:" "${paths_to_add[@]}";
+export PATH="${PATH%:}";

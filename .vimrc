@@ -84,6 +84,15 @@ set synmaxcol=512		" try highlighting maximum 512 columns.
 set fileformat=unix		" always use unix fileformat.
 set encoding=utf-8		" force UTF-8 encoding.
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = {
+		\ 'dir':  'frontend/files$\|\.git$\|\.svn$\|\compiled_templates$',
+		\ }
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

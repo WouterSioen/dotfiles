@@ -10,5 +10,3 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	autocrlf = input
-	safecrlf = true

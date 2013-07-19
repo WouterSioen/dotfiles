@@ -51,6 +51,13 @@ set shell=bash
 
 " ----- Movement -----
 
+
+" {{{1 Key bindings
+"===============================================================================
+" Make <Leader> char something more accessible on a AZERTY keyboard
+let mapleader = ","
+let g:mapleader = ","
+
 " Less finger wrecking window navigation.
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k

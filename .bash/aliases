@@ -8,4 +8,7 @@ alias grb='git rb'
 alias gip='git pull'
 alias gic='git cherry-pick'
 
+alias sbl='sublime'
+
 alias check='phpcs -v --standard="$HOME/.phpcs/Fork" --extensions=php --report=full'
+alias cc='cd tools && ./remove_cache && cd ..'

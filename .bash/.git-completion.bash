@@ -2503,7 +2503,7 @@ _gitk ()
 
 __git_complete git __git_main
 __git_complete gitk __gitk_main
-__git_complete cap _git_checkout
+__git_complete cap _git_cherry
 __git_complete gic _git_cherry
 
 # The following are necessary only for Cygwin, and only are needed

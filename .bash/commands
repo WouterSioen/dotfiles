@@ -21,3 +21,18 @@ addsshkey()
 		tput bold; ssh -o PasswordAuthentication=no $username@$hostname true && { tput setaf 2; echo 'Success!'; } || { tput setaf 1; echo 'Failure'; }; tput sgr0
 	fi
 }
+
+# adds an entry to the hosts file (with a backup)
+addhost()
+{
+	site=$1
+
+	if [[ "$site" == "" ]]
+	then
+		echo "usage: addvhost <name>"
+	else
+		sudo cp /etc/hosts /etc/hosts.original
+		echo -e "127.0.0.1\t${site}.dev" >> /etc/hosts
+		sudo apachectl graceful
+	fi
+}

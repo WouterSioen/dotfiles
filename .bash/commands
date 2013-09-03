@@ -36,3 +36,17 @@ addhost()
 		sudo apachectl graceful
 	fi
 }
+
+# toggles xdebug
+togglexdebug()
+{
+	if php -i | grep -Fq 'xdebug'
+	then
+		# disable
+		sudo sed -i -e 's/zend_extension=\/usr\/lib\/php\/extensions\/no-debug-non-zts-20090626\/xdebug.so/\;zend_extension=\/usr\/lib\/php\/extensions\/no-debug-non-zts-20090626\/xdebug.so/g' /etc/php.ini
+	else
+		#enable
+		sudo sed -i -e 's/\;zend_extension=\/usr\/lib\/php\/extensions\/no-debug-non-zts-20090626\/xdebug.so/zend_extension=\/usr\/lib\/php\/extensions\/no-debug-non-zts-20090626\/xdebug.so/g' /etc/php.ini
+	fi
+	sudo apachectl restart
+}

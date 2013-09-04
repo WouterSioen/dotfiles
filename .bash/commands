@@ -32,7 +32,8 @@ addhost()
 		echo "usage: addvhost <name>"
 	else
 		sudo cp /etc/hosts /etc/hosts.original
-		sudo echo -e "127.0.0.1\t${site}.dev" >> /etc/hosts
+
+		sudo sh -c "echo \"127.0.0.1\t${site}.dev\" >> /etc/hosts"
 		sudo apachectl graceful
 	fi
 }

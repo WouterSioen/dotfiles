@@ -66,3 +66,38 @@ serialize()
 		echo $output
 	fi
 }
+
+# random password generator
+passgen()
+{
+	length=$1
+
+	if [[ "$length" == "" ]]
+	then
+		echo "usage: passgen <length>"
+	else
+		charArray=( 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z' 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' )
+		numArray=( 0 1 2 3 4 5 6 7 8 9 )
+		specialArray=( "!" "@" "#" "$" "%" "*" "[" "]" ";" "?" "(" ")" )
+
+		for (( x=0;x<$length;x++ )); do
+
+			# This could be changed to RANDOM%3 to get special characters.
+			type=$((RANDOM%2))
+			if [ $type -eq 0 ]; then
+				char=$((RANDOM%52))
+				newChar=${charArray[$char]}
+			elif [ $type -eq 1 ]; then
+				char=$((RANDOM%10))
+				newChar=${numArray[$char]}
+			elif [ $type -eq 2 ]; then
+				char=$((RANDOM%12))
+				newChar=${specialArray[$char]}
+			fi
+			pass=$final$newChar
+		done
+
+		echo -n $pass | pbcopy
+		echo $pass
+	fi
+}

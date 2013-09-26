@@ -81,7 +81,6 @@ passgen()
 		specialArray=( "!" "@" "#" "$" "%" "*" "[" "]" ";" "?" "(" ")" )
 
 		for (( x=0;x<$length;x++ )); do
-
 			# This could be changed to RANDOM%3 to get special characters.
 			type=$((RANDOM%2))
 			if [ $type -eq 0 ]; then
@@ -94,7 +93,7 @@ passgen()
 				char=$((RANDOM%12))
 				newChar=${specialArray[$char]}
 			fi
-			pass=$final$newChar
+			pass=$pass$newChar
 		done
 
 		echo -n $pass | pbcopy

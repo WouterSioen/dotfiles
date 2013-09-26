@@ -51,3 +51,18 @@ togglexdebug()
 	fi
 	sudo apachectl restart
 }
+
+# serialize
+serialize()
+{
+	var=$1
+
+	if [[ "$var" == "" ]]
+	then
+		echo "usage: serialize <variable>"
+	else
+		output=`php -r "echo serialize($1);"`
+		echo -n $output | pbcopy
+		echo $output
+	fi
+}

@@ -98,8 +98,9 @@ passgen()
 		echo -n $pass | pbcopy
 		echo $pass
 	fi
-# creates database with a user
+}
 
+# creates database with a user
 createdb()
 {
 	EXPECTED_ARGS=3

@@ -32,7 +32,6 @@ addhost()
 		echo "usage: addvhost <name>"
 	else
 		sudo cp /etc/hosts /etc/hosts.original
-
 		sudo sh -c "echo \"127.0.0.1\t${site}.dev\" >> /etc/hosts"
 		sudo apachectl graceful
 	fi
@@ -99,4 +98,23 @@ passgen()
 		echo -n $pass | pbcopy
 		echo $pass
 	fi
+# creates database with a user
+
+createdb()
+{
+	EXPECTED_ARGS=3
+	E_BADARGS=65
+	MYSQL=`which mysql`
+
+	Q1="CREATE DATABASE IF NOT EXISTS $1;"
+	Q2="GRANT ALL ON *.* TO '$2'@'localhost' IDENTIFIED BY '$3';"
+	Q3="FLUSH PRIVILEGES;"
+	SQL="${Q1}${Q2}${Q3}"
+
+	if [ $# -ne $EXPECTED_ARGS ]
+	then
+		echo "Usage: $0 dbname dbuser dbpass"
+		exit $E_BADARGS
+	fi
+	$MYSQL -uroot -p -e "$SQL"
 }

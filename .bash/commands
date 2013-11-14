@@ -119,3 +119,16 @@ createdb()
 	fi
 	$MYSQL -uroot -p -e "$SQL"
 }
+
+# creates a new gitignore file that ignores everything except the gitignore file itself
+add_gitignore()
+{
+	directory=$1
+
+	if [[ "$directory" == "" ]]
+	then
+		directory="."
+	fi
+
+	echo -e "*\n!.gitignore" >> "${PWD}/$directory/.gitignore"
+}

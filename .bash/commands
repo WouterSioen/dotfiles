@@ -114,10 +114,10 @@ createdb()
 
 	if [ $# -ne $EXPECTED_ARGS ]
 	then
-		echo "Usage: $0 dbname dbuser dbpass"
-		exit $E_BADARGS
+		echo "Usage: createdb <dbname> <dbuser> <dbpass>"
+	else
+		$MYSQL -uroot -p -e "$SQL"
 	fi
-	$MYSQL -uroot -p -e "$SQL"
 }
 
 # creates a new gitignore file that ignores everything except the gitignore file itself
@@ -131,4 +131,12 @@ add_gitignore()
 	fi
 
 	echo -e "*\n!.gitignore" >> "${PWD}/$directory/.gitignore"
+}
+
+# Does some sneakers stuff
+sneakers()
+{
+	cd ~/Tools/sneakers
+	vagrant $*
+	cd - > /dev/null
 }

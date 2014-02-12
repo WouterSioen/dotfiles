@@ -25,3 +25,6 @@ alias sbl='sublime'
 # Fork CMS
 alias check='phpcs -v --standard="$HOME/.phpcs/Fork" --extensions=php --report=full'
 alias cc='cd tools && ./remove_cache && cd ..'
+
+# Load composer with hhvm
+alias composer="hhvm -v ResourceLimit.SocketDefaultTimeout=30 -v Http.SlowQueryThreshold=30000 /usr/local/bin/composer"

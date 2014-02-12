@@ -41,13 +41,13 @@ paths_to_add=(
   /usr/{,s}bin
   # Git
   /usr/local/git/bin
-  # Fork CLI tool
-  "$HOME/.knife"
   # .bash folder
   "$HOME/.bash"
   # Others
   /opt/local/bin
   /opt/local/sbin
+  # Pear
+  /Users/woutersioen/pear/bin
 );
 
 # Now implode everything into the new PATH variable.

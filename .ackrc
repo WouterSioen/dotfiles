@@ -1,0 +1,5 @@
+--type-add=html=.tpl,.twig
+--type-set=txt=.rst
+--smart-case
+--follow
+--flush

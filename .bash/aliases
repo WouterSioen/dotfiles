@@ -19,11 +19,7 @@ alias gcotb='git checkout --track -b'
 alias glog='git log'
 alias glogp='git log --pretty=format:"%h %s" --graph'
 
-# Software
-alias sbl='sublime'
-
 # Fork CMS
-alias check='phpcs -v --standard="$HOME/.phpcs/Fork" --extensions=php --report=full'
 alias cc='cd tools && ./remove_cache && cd ..'
 
 # Do some commands with hhvm

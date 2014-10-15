@@ -10,6 +10,9 @@ export HISTIGNORE="ls:ll:la:pwd:clear:h:j"
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 
+# use vim as default editor
+export EDITOR=vim
+
 # Make phpUnit pretty
 alias phpunit='phpunit --colors'
 
@@ -31,6 +34,8 @@ fi
 
 # list the directories we want to add to the PATH variable, if they exist.
 paths_to_add=(
+  "$HOME/.composer/vendor/bin"
+  /usr/local/php5/bin
   "$HOME/bin"
   # MySQL
   /usr/local/mysql/bin

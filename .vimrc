@@ -19,6 +19,7 @@ set softtabstop=4		" mindblowing.
 set tabstop=4			" skullcracking.
 set noexpandtab
 set backspace=indent,eol,start
+set guifont=Menlo\ Regular:h16
 
 " ----- UI settings -----
 

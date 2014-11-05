@@ -7,6 +7,7 @@ alias gp='git push'
 alias gd='git diff'
 alias ga='git add'
 alias gua='git reset HEAD' # git undo add
+alias gum='git reset --merge ORIG_HEAD' # git undo merge
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gcm='git commit -m'

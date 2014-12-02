@@ -22,7 +22,3 @@ alias glogp='git log --pretty=format:"%h %s" --graph'
 
 # Fork CMS
 alias cc='cd tools && ./remove_cache && cd ..'
-
-# Do some commands with hhvm
-alias composer="hhvm -v ResourceLimit.SocketDefaultTimeout=30 -v Http.SlowQueryThreshold=30000 /usr/local/bin/composer"
-alias con="hhvm app/console"

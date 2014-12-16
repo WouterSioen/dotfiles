@@ -65,6 +65,10 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" More natural position of new splits
+set splitbelow
+set splitright
+
 " This will enable us to have a nice choice with ctags
 nnoremap <C-]> g<C-]>
 

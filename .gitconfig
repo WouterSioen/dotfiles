@@ -1,6 +1,6 @@
 [user]
     name = woutersioen
-    email = wouter.sioen@wijs.be
+    email = wouter.sioen@gmail.com
 
 [pretty]
     concise = %C(yellow)%h%C(reset) %s %C(bold black)(%an, %ar)%C(reset)%C(bold blue)%d%C(reset)
@@ -13,8 +13,10 @@
 
 [push]
     default = simple
+
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

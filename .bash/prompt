@@ -16,7 +16,7 @@ BLINK=$(tput blink)
 REVERSE=$(tput smso)
 UNDERLINE=$(tput smul)
 
-# returns the active git branch - this is used in rewrite_prompt()
+# returns the active git branch - this is used in the prompt
 function git_branch()
 {
 	git branch --no-color 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

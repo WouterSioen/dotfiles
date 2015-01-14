@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Update brew dependencies
+brew update && brew upgrade
+
+# Update my dotfiles
+git pull --ff-only
+
+# Update submodules
+git submodule foreach git pull origin master
+

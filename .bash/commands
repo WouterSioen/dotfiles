@@ -64,6 +64,7 @@ serialize()
 passgen()
 {
 	length=$1
+	pass=""
 
 	if [[ "$length" == "" ]]
 	then

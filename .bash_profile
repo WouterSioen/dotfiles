@@ -11,3 +11,7 @@ for file in /usr/local/etc/bash_completion.d/{git-completion.bash,git-prompt.sh,
 	[ -r "$file" ] && source "$file";
 done;
 unset file;
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi

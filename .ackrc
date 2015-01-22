@@ -3,3 +3,4 @@
 --smart-case
 --follow
 --flush
+--type-add=svg=.svg

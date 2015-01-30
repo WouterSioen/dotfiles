@@ -128,6 +128,13 @@ add_gitignore()
 	echo -e "*\n!.gitignore" >> "${PWD}/$directory/.gitignore"
 }
 
+install_precommit()
+{
+	curl -O https://raw.githubusercontent.com/WouterSioen/pre-commit/master/pre-commit
+	mv pre-commit .git/hooks/pre-commit
+	chmod +x .git/hooks/pre-commit
+}
+
 # Does some sneakers stuff
 sneakers()
 {

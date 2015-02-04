@@ -7,7 +7,7 @@ done;
 unset file;
 
 # Loads files in bash_completion.d folder
-for file in /usr/local/etc/bash_completion.d/{git-completion.bash,git-prompt.sh,tmux}; do
+for file in /usr/local/etc/bash_completion.d/{git-completion.bash,git-prompt.sh,tmux,symfony}; do
 	[ -r "$file" ] && source "$file";
 done;
 unset file;

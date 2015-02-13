@@ -9,7 +9,7 @@
     ui = true
 
 [core]
-    excludesfile = ~/.global_ignore
+    excludesfile = ~/.global_gitignore
 
 [push]
     default = simple

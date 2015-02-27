@@ -34,6 +34,7 @@ fi
 
 # list the directories we want to add to the PATH variable, if they exist.
 paths_to_add=(
+  $(brew --prefix)/bin
   "$HOME/.composer/vendor/bin"
   /usr/local/php5/bin
   "$HOME/bin"

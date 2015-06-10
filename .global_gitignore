@@ -12,6 +12,7 @@
 #######
 *.php~
 *phpintel/
+.idea/
 
 # Packages #
 ############

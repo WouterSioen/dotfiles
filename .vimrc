@@ -99,11 +99,16 @@ set encoding=utf-8		" force UTF-8 encoding.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_map = '<leader>t'
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
 		\ 'dir':  'frontend/files$\|\.git$\|\.svn$\|\compiled_templates$',
 		\ }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" show hidden files by default
+let g:NERDTreeShowHidden = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE

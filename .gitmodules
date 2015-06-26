@@ -10,3 +10,6 @@
 [submodule ".git_template/hooks"]
 	path = .git_template/hooks
 	url = git@github.com:WouterSioen/pre-commit.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree

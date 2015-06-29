@@ -35,7 +35,6 @@ set nopaste				" don't use stupid paste settings
 set colorcolumn=80
 set autoread
 set history=1000
-set cpoptions+=$		" shows a dollor on the last change character
 
 " Remember undo's even when buffer has been in the background.
 " Also allows for sending buffers to the background without saving...

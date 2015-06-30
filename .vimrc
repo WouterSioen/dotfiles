@@ -95,6 +95,13 @@ set synmaxcol=512		" try highlighting maximum 512 columns.
 set fileformat=unix		" always use unix fileformat.
 set encoding=utf-8		" force UTF-8 encoding.
 
+" ----- Autocomplete ----
+
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+set completeopt=longest,menuone
+
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

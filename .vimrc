@@ -17,7 +17,7 @@ set nowrap				" do not wrap lines.
 set shiftwidth=4		" use four characters for tabs.
 set softtabstop=4		" mindblowing.
 set tabstop=4			" skullcracking.
-set noexpandtab
+set expandtab
 set backspace=indent,eol,start
 set guifont=Menlo\ Regular:h16
 

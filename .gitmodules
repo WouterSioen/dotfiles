@@ -25,3 +25,6 @@
 [submodule "/Users/woutersioen/.vim/bundle/phpcomplete"]
 	path = .vim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule ".vim/bundle/colors-solarized"]
+	path = .vim/bundle/colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git

@@ -20,8 +20,8 @@
 	path = .vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
 [submodule "/Users/woutersioen/.vim/bundle/supertab"]
-	path = /Users/woutersioen/.vim/bundle/supertab
+	path = .vim/bundle/supertab
 	url = git@github.com:ervandew/supertab.git
 [submodule "/Users/woutersioen/.vim/bundle/phpcomplete"]
-	path = /Users/woutersioen/.vim/bundle/phpcomplete
+	path = .vim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git

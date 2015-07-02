@@ -19,10 +19,10 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
-[submodule "/Users/woutersioen/.vim/bundle/supertab"]
+[submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = git@github.com:ervandew/supertab.git
-[submodule "/Users/woutersioen/.vim/bundle/phpcomplete"]
+[submodule ".vim/bundle/phpcomplete"]
 	path = .vim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule ".vim/bundle/colors-solarized"]

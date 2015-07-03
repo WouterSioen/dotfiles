@@ -13,6 +13,7 @@
 *.php~
 *phpintel/
 .idea/
+tags
 
 # Packages #
 ############

@@ -97,9 +97,10 @@ set fileformat=unix		" always use unix fileformat.
 set encoding=utf-8		" force UTF-8 encoding.
 
 " ----- Autocomplete ----
-
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+set tags=./tags;/       " Ctags, look in current dir and up
+autocmd BufWritePost *.php silent! :echom system("/usr/local/bin/ctags -R . &2>/dev/null")
 set completeopt=longest,menuone
+set omnifunc=syntaxcomplete#Complete
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 

@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/delimitMate"]
 	path = .vim/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
+[submodule ".vim/bundle/vim-php-namespace"]
+	path = .vim/bundle/vim-php-namespace
+	url = git@github.com:arnaud-lb/vim-php-namespace.git

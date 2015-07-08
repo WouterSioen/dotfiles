@@ -103,7 +103,7 @@ autocmd BufWritePost *.php silent! :echom system("/usr/local/bin/ctags -R . &2>/
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP configuration
@@ -132,6 +132,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_phpmd_disable = 1
 let g:syntastic_php_phpcs_args="--standard=PSR2 -n --report=csv"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ultisnips config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+set runtimepath+=~/.vim/snippets
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim php namespace config
@@ -178,19 +186,8 @@ autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
 autocmd FileType yaml setlocal ts=4 sts=4 sw=4 expandtab
 
-" Tell snipmate where to get our snippets
-let g:snippets_dir = "~/.vim/snippets"
-
 " Tell ctrlp some new settings
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$',
     \ 'file': '\.exe$\|\.so$\|\.swp\|\.DS_STORE\|.php\~$',
     \ }
-
-" Vim-Todo mapping
-nmap <Leader>o :call Todo_ToggleTickbox()<cr>
-vmap <Leader>o :call Todo_ToggleTickbox()<cr>
-nmap <Leader>v :call Todo_TickFinished()<cr>
-vmap <Leader>v :call Todo_TickFinished()<cr>
-nmap <Leader>x :call Todo_TickCancelled()<cr>
-vmap <Leader>x :call Todo_TickCancelled()<cr>

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias ':q'='exit'
+
 # Git aliases
 alias gst='git status -sb'
 alias gl='git pull'

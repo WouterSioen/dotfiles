@@ -5,6 +5,7 @@ set nocompatible		" use Vim defaults.
 " ----- Pathogen -----
 
 call pathogen#infect()	" Pathogen must be called before filetype detection.
+call pathogen#helptags()
 filetype plugin indent on
 
 " ----- Text formatting -----

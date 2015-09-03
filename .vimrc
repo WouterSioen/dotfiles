@@ -184,6 +184,9 @@ autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
 autocmd FileType yaml setlocal ts=4 sts=4 sw=4 expandtab
 
+" crontab can only be edited using these settings
+autocmd filetype crontab setlocal nobackup nowritebackup
+
 " Tell ctrlp some new settings
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$',

@@ -43,6 +43,12 @@ set history=1000
 set hidden
 set autowrite
 
+" persist undo files, to make sure we can undo after closing a file
+set undofile
+
+silent execute '!mkdir -p $HOME/.vim/tmp/undo'
+set undodir=$HOME/.vim/tmp/undo
+
 " ----- File navigation -----
 
 set wildmenu			" display all possibilities on autocomplete.

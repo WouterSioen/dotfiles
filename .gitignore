@@ -28,6 +28,7 @@
 /.sumorc
 /.vagrant.d/
 /.viminfo
+/.vim/tmp/*
 /Applications/
 /Desktop/
 /Documents/

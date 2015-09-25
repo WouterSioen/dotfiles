@@ -192,3 +192,7 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$',
     \ 'file': '\.exe$\|\.so$\|\.swp\|\.DS_STORE\|.php\~$',
     \ }
+
+" enable spelling om some filetypes
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell

@@ -61,3 +61,5 @@ paths_to_add=(
 # Now implode everything into the new PATH variable.
 printf -v PATH "%s:" "${paths_to_add[@]}";
 export PATH="${PATH%:}";
+
+. `brew --prefix`/etc/profile.d/z.sh

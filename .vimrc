@@ -120,6 +120,18 @@ let g:ctrlp_custom_ignore = {
 		\ 'dir':  'frontend/files$\|\.git$\|\.svn$\|\compiled_templates$',
 		\ }
 
+" Tell ctrlp some new settings
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$',
+    \ 'file': '\.exe$\|\.so$\|\.swp\|\.DS_STORE\|.php\~$',
+    \ }
+
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,11 +199,10 @@ autocmd FileType yaml setlocal ts=4 sts=4 sw=4 expandtab
 " crontab can only be edited using these settings
 autocmd filetype crontab setlocal nobackup nowritebackup
 
-" Tell ctrlp some new settings
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$',
-    \ 'file': '\.exe$\|\.so$\|\.swp\|\.DS_STORE\|.php\~$',
-    \ }
+" use ack instead of ag
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 
 " enable spelling om some filetypes
 autocmd FileType gitcommit setlocal spell

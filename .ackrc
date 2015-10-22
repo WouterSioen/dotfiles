@@ -1,6 +1,7 @@
 --type-add=html=.tpl,.twig
+--type-add=twig=.twig
 --type-set=txt=.rst
+--type-add=svg=.svg
 --smart-case
 --follow
 --flush
---type-add=svg=.svg

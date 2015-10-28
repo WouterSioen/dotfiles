@@ -21,7 +21,6 @@ set tabstop=4			" skullcracking.
 set expandtab
 set backspace=indent,eol,start
 set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15
-let g:airline_powerline_fonts = 1
 
 " ----- UI settings -----
 
@@ -169,6 +168,11 @@ set runtimepath+=~/.vim/snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
 
 
 " ----- Custom mapping -----

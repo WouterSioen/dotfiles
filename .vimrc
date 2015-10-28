@@ -127,7 +127,7 @@ let g:ctrlp_custom_ignore = {
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
     let g:ctrlp_use_caching = 0
 endif
 
@@ -191,9 +191,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Do not pollute the working directory with swap and other files.
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-" custom statusline
-set statusline=%<%f\ %m%r\ %=line\ %l\ of\ %L\ %(@\ %c%V%)\ %25.25(%{&ff},%{strlen(&fenc)?&fenc:'none'}\ %y%)\ "
 
 " .tpl files are mainly (x)html files, xhtml gives better omni completion.
 autocmd BufNewFile,BufRead *.tpl set filetype=xhtml

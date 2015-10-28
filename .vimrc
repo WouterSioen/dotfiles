@@ -38,6 +38,10 @@ set autoread            " autoreload files after changes (works only in gui vim)
 set history=1000        " bigger history
 set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden characters
 
+" More natural position of new splits
+set splitbelow
+set splitright
+
 " Remember undo's even when buffer has been in the background.
 " Also allows for sending buffers to the background without saving...
 set hidden
@@ -60,8 +64,8 @@ set shell=bash
 " ----- Movement -----
 
 
-" {{{1 Key bindings
-"===============================================================================
+" ----- Key bindings -----
+
 " Make <Leader> char something more accessible on a AZERTY keyboard
 let mapleader = ","
 let g:mapleader = ","
@@ -72,16 +76,14 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" More natural position of new splits
-set splitbelow
-set splitright
-
 " This will enable us to have a nice choice with ctags
 nnoremap <C-]> g<C-]>
 
 " Hop from method to method
 nmap <c-n> ]]
 nmap <c-m> [[
+
+" ----- Clipboard -----
 
 " Copy to our clipboard
 set clipboard=unnamed
@@ -180,8 +182,6 @@ let g:airline_powerline_fonts = 1
 
 " F7 toggles highlighted search.
 map <F7> :set hlsearch!<CR>
-
-" visualize stuff.
 
 " on editing, jump to last known cursor position.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif

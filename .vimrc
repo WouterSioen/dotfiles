@@ -112,7 +112,7 @@ autocmd BufWritePost *.php silent! :echom system("/usr/local/bin/ctags -R . &2>/
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 
-" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP configuration

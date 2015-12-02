@@ -1,10 +1,14 @@
 --recurse=yes
 --tag-relative=yes
+--exclude=.svn
 --exclude=.git
 --exclude=node_modules
+--exclude=vendor
 --exclude=ckeditor
 --exclude=ckfinder
+--exclude=cache
 --exclude=*.js
+--exclude=*Test.php
 --exclude=composer.phar
---langmap=php:.engine.inc.module.theme.install.php
---PHP-kinds=+cfi-vj
+--langmap=php:.php
+--PHP-kinds=+cfiv-j

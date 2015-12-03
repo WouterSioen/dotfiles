@@ -23,4 +23,4 @@ function git_branch()
 }
 
 # rewrite prompt
-PS1="${WHITE}[\\A] ${GREEN}\w ${YELLOW}\$(git_branch)\${NORMAL}${NORMAL}\n$ "
+PS1="${GREEN}\w ${YELLOW}\$(git_branch)\${NORMAL}${NORMAL}\n$ "

@@ -3,7 +3,6 @@
 --exclude=.svn
 --exclude=.git
 --exclude=node_modules
---exclude=vendor
 --exclude=ckeditor
 --exclude=ckfinder
 --exclude=cache

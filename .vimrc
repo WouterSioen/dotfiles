@@ -108,7 +108,7 @@ set encoding=utf-8       " force UTF-8 encoding.
 
 " ----- Autocomplete ----
 set tags=./tags;/       " Ctags, look in current dir and up
-"autocmd BufWritePost *.php silent! :echom system("/usr/local/bin/ctags -R . &2>/dev/null")
+autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags ]; then /usr/local/bin/ctags -R . &2>/dev/null; fi")
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 

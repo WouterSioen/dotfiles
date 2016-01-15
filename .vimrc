@@ -202,6 +202,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " .tpl files are mainly (x)html files, xhtml gives better omni completion.
 autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
+autocmd BufNewFile,BufRead *.xml.dist set filetype=xml
+autocmd BufNewFile,BufRead *.yml.dist set filetype=yaml
 autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
 autocmd FileType yaml setlocal ts=4 sts=4 sw=4 expandtab
 

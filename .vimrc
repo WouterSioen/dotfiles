@@ -37,6 +37,7 @@ set colorcolumn=80      " add a line on the 80th character
 set autoread            " autoreload files after changes (works only in gui vim)
 set history=1000        " bigger history
 set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden characters
+set shortmess=a         " decrease message size to avoid the "Hit ENTER to continue" prompts
 
 " More natural position of new splits
 set splitbelow

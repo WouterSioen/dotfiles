@@ -119,13 +119,10 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " CtrlP configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = {
-		\ 'dir':  'frontend/files$\|\.git$\|\.svn$\|\compiled_templates$',
-		\ }
 
 " Tell ctrlp some new settings
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|coverage$\|bower_components$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$\|frontend\/files$\|compiled_templates$',
     \ 'file': '\.exe$\|\.so$\|\.swp\|\.DS_STORE\|.php\~$',
     \ }
 

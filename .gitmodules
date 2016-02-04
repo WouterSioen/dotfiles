@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/vdebug"]
 	path = .vim/bundle/vdebug
 	url = git@github.com:joonty/vdebug.git
+[submodule ".vim/bundle/fugitive-gitlab"]
+	path = .vim/bundle/fugitive-gitlab
+	url = git@github.com:shumphrey/fugitive-gitlab.vim.git

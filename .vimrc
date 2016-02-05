@@ -108,8 +108,9 @@ set fileformat=unix      " always use unix fileformat.
 set encoding=utf-8       " force UTF-8 encoding.
 
 " ----- Autocomplete ----
-set tags=./tags;/       " Ctags, look in current dir and up
-autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags ]; then /usr/local/bin/ctags -R . &2>/dev/null; fi")
+set tags+=./tags;/,./tags.vendors;/ " Add both normal and vendors tags file
+autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags ]; then /usr/local/bin/ctags -R src &2>/dev/null; fi;")
+autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags.vendor ]; then /usr/local/bin/ctags -R -f tags.vendors vendor &2>/dev/null; fi")
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 

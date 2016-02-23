@@ -216,6 +216,10 @@ autocmd BufWritePost *Test.php make %
 " crontab can only be edited using these settings
 autocmd filetype crontab setlocal nobackup nowritebackup
 
+" In the quickfix window, <CR> is used to jump to the error under the
+" cursor, so undefine the mapping there.
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+
 " use ack instead of ag
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'

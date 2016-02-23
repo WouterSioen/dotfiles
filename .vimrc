@@ -209,6 +209,10 @@ autocmd BufNewFile,BufRead *.yml.dist set filetype=yaml
 autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
 autocmd FileType yaml setlocal ts=4 sts=4 sw=4 expandtab
 
+" set phpunit as compiler for test files
+autocmd BufNewFile,BufRead *Test.php compiler phpunit
+autocmd BufWritePost *Test.php make %
+
 " crontab can only be edited using these settings
 autocmd filetype crontab setlocal nobackup nowritebackup
 

@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/vim-airline-themes"]
 	path = .vim/bundle/vim-airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule ".vim/bundle/vim-phpunit"]
+	path = .vim/bundle/vim-phpunit
+	url = git@github.com:afternoon/vim-phpunit.git

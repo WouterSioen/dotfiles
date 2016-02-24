@@ -1,15 +1,17 @@
+vim:fdm=marker
+
 silent execute '!mkdir -p $HOME/.vim/tmp/undo'
 filetype plugin indent on
 
 " -----------------------------------------------------------------------------
-" pathogen
+" pathogen {{{1
 " -----------------------------------------------------------------------------
 
 call pathogen#infect()   " Pathogen must be called before filetype detection.
 call pathogen#helptags()
 
 " -----------------------------------------------------------------------------
-" important
+" important {{{1
 " -----------------------------------------------------------------------------
 
 set nocompatible         " use Vim defaults.
@@ -17,7 +19,7 @@ set nopaste              " don't use stupid paste settings
 set runtimepath+=~/.vim/snippets " adds snippets to our runtimepath
 
 " -----------------------------------------------------------------------------
-" moving around, searching, and patterns
+" moving around, searching, and patterns {{{1
 " -----------------------------------------------------------------------------
 
 set incsearch            " do incremental search.
@@ -25,13 +27,13 @@ set ignorecase           " no case sensitivity please.
 set smartcase            " search case sensitive if i'm willing to.
 
 " -----------------------------------------------------------------------------
-" tags
+" tags {{{1
 " -----------------------------------------------------------------------------
 
 set tags+=./tags;/,./tags.vendors;/ " Add both normal and vendors tags file
 
 " -----------------------------------------------------------------------------
-" displaying text
+" displaying text {{{1
 " -----------------------------------------------------------------------------
 
 set nowrap              " do not wrap lines.
@@ -41,7 +43,7 @@ set list                " enable listcharacters.
 set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden characters
 
 " -----------------------------------------------------------------------------
-" syntax, highlighting and spelling
+" syntax, highlighting and spelling {{{1
 " -----------------------------------------------------------------------------
 
 set laststatus=2        " show status line.
@@ -50,7 +52,7 @@ set background=dark
 set synmaxcol=512       " try highlighting maximum 512 columns.
 
 " -----------------------------------------------------------------------------
-" multiple windows
+" multiple windows {{{1
 " -----------------------------------------------------------------------------
 
 set cursorline          " visualize current line.
@@ -62,27 +64,27 @@ set statusline+=%{SyntasticStatuslineFlag()} " Syntastic status line
 set statusline+=%* " Syntastic status line
 
 " -----------------------------------------------------------------------------
-" multiple tab pages
+" multiple tab pages {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" terminal
+" terminal {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" using the mouse
+" using the mouse {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" printing
+" printing {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" messages and info
+" messages and info {{{1
 " -----------------------------------------------------------------------------
 
 set ruler               " always show cursor position.
@@ -91,13 +93,13 @@ set showcmd             " always display commands.
 set shortmess=a         " decrease message size to avoid the "Hit ENTER to continue" prompts
 
 " -----------------------------------------------------------------------------
-" selecting text
+" selecting text {{{1
 " -----------------------------------------------------------------------------
 
 set clipboard=unnamed   " copy to our clipboard
 
 " -----------------------------------------------------------------------------
-" editing text
+" editing text {{{1
 " -----------------------------------------------------------------------------
 
 set backspace=indent,eol,start
@@ -106,7 +108,7 @@ set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 
 " -----------------------------------------------------------------------------
-" tabs and indenting
+" tabs and indenting {{{1
 " -----------------------------------------------------------------------------
 
 set autoindent          " automatic indent new lines.
@@ -119,22 +121,22 @@ set tabstop=4           " skullcracking.
 set expandtab
 
 " -----------------------------------------------------------------------------
-" folding
+" folding {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" diff mode
+" diff mode {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" mapping
+" mapping {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" reading and writing files
+" reading and writing files {{{1
 " -----------------------------------------------------------------------------
 
 set autoread            " autoreload files after changes (works only in gui vim)
@@ -142,14 +144,14 @@ set autowrite
 set fileformat=unix     " always use unix fileformat.
 
 " -----------------------------------------------------------------------------
-" the swap file
+" the swap file {{{1
 " -----------------------------------------------------------------------------
 
 " Do not pollute the working directory with swap and other files.
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " -----------------------------------------------------------------------------
-" command line editing
+" command line editing {{{1
 " -----------------------------------------------------------------------------
 
 set history=1000        " bigger history
@@ -160,35 +162,35 @@ set wildmenu           " display all possibilities on autocomplete.
 set wildmode=longest,list,full
 
 " -----------------------------------------------------------------------------
-" executing external commands
+" executing external commands {{{1
 " -----------------------------------------------------------------------------
 
 set shell=bash
 
 " -----------------------------------------------------------------------------
-" running make and jumping to errors
+" running make and jumping to errors {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" language specific
+" language specific {{{1
 " -----------------------------------------------------------------------------
 
 
 " -----------------------------------------------------------------------------
-" multi-byte characters
+" multi-byte characters {{{1
 " -----------------------------------------------------------------------------
 
 set encoding=utf-8       " force UTF-8 encoding.
 
 " -----------------------------------------------------------------------------
-" various
+" various {{{1
 " -----------------------------------------------------------------------------
 
 
 
 " -----------------------------------------------------------------------------
-" keybindings
+" keybindings {{{1
 " -----------------------------------------------------------------------------
 
 " Make <Leader> char something more accessible on a AZERTY keyboard
@@ -219,7 +221,7 @@ autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags.vendor ]; then /
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP configuration
+" CtrlP configuration {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 'ra'
 
@@ -236,13 +238,13 @@ if executable('ag')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree configuration
+" NERDTree configuration {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show hidden files by default
 let g:NERDTreeShowHidden = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic configuration
+" Syntastic configuration {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:syntastic_always_populate_loc_list = 0
@@ -257,32 +259,32 @@ let g:syntastic_style_error_symbol = "✗"
 let g:syntastic_style_warning_symbol = "⚠"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ultisnips config
+" Ultisnips config {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim php namespace config
+" Vim php namespace config {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim php refactoring toolbox config
+" Vim php refactoring toolbox config {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_php_refactoring_auto_validate_visibility = 1
 let g:vim_php_refactoring_default_property_visibility = 'private'
 let g:vim_php_refactoring_default_method_visibility = 'private'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airline config
+" airline config {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fugitive-gitlab config
+" fugitive-gitlab config {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fugitive_gitlab_domains = ['http://git.sumocoders.be']
 

@@ -1,71 +1,195 @@
-" ----- Defaults -----
+silent execute '!mkdir -p $HOME/.vim/tmp/undo'
+filetype plugin indent on
 
-set nocompatible         " use Vim defaults.
-
-" ----- Pathogen -----
+" -----------------------------------------------------------------------------
+" pathogen
+" -----------------------------------------------------------------------------
 
 call pathogen#infect()   " Pathogen must be called before filetype detection.
 call pathogen#helptags()
-filetype plugin indent on
 
-" ----- Text formatting -----
+" -----------------------------------------------------------------------------
+" important
+" -----------------------------------------------------------------------------
+
+set nocompatible         " use Vim defaults.
+set nopaste              " don't use stupid paste settings
+set runtimepath+=~/.vim/snippets " adds snippets to our runtimepath
+
+" -----------------------------------------------------------------------------
+" moving around, searching, and patterns
+" -----------------------------------------------------------------------------
+
+set incsearch            " do incremental search.
+set ignorecase           " no case sensitivity please.
+set smartcase            " search case sensitive if i'm willing to.
+
+" -----------------------------------------------------------------------------
+" tags
+" -----------------------------------------------------------------------------
+
+set tags+=./tags;/,./tags.vendors;/ " Add both normal and vendors tags file
+
+" -----------------------------------------------------------------------------
+" displaying text
+" -----------------------------------------------------------------------------
+
+set nowrap              " do not wrap lines.
+set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15
+set number              " show line numbers
+set list                " enable listcharacters.
+set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden characters
+
+" -----------------------------------------------------------------------------
+" syntax, highlighting and spelling
+" -----------------------------------------------------------------------------
+
+set laststatus=2        " show status line.
+set colorcolumn=80      " add a line on the 80th character
+set background=dark
+set synmaxcol=512       " try highlighting maximum 512 columns.
+
+" -----------------------------------------------------------------------------
+" multiple windows
+" -----------------------------------------------------------------------------
+
+set cursorline          " visualize current line.
+set splitbelow
+set splitright
+set hidden
+set statusline+=%#warningmsg# " Syntastic status line
+set statusline+=%{SyntasticStatuslineFlag()} " Syntastic status line
+set statusline+=%* " Syntastic status line
+
+" -----------------------------------------------------------------------------
+" multiple tab pages
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" terminal
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" using the mouse
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" printing
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" messages and info
+" -----------------------------------------------------------------------------
+
+set ruler               " always show cursor position.
+set showmode            " show the mode we're currently in.
+set showcmd             " always display commands.
+set shortmess=a         " decrease message size to avoid the "Hit ENTER to continue" prompts
+
+" -----------------------------------------------------------------------------
+" selecting text
+" -----------------------------------------------------------------------------
+
+set clipboard=unnamed   " copy to our clipboard
+
+" -----------------------------------------------------------------------------
+" editing text
+" -----------------------------------------------------------------------------
+
+set backspace=indent,eol,start
+set showmatch           " highlight matching brackets/showbraces.
+set completeopt=longest,menuone
+set omnifunc=syntaxcomplete#Complete
+
+" -----------------------------------------------------------------------------
+" tabs and indenting
+" -----------------------------------------------------------------------------
 
 set autoindent          " automatic indent new lines.
 set smartindent         " make it smart.
 set copyindent          " copy structure of existing lines.
 set cindent             " enable automatic C program indenting.
-set nowrap              " do not wrap lines.
 set shiftwidth=4        " use four characters for tabs.
 set softtabstop=4       " mindblowing.
 set tabstop=4           " skullcracking.
 set expandtab
-set backspace=indent,eol,start
-set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15
 
-" ----- UI settings -----
+" -----------------------------------------------------------------------------
+" folding
+" -----------------------------------------------------------------------------
 
-set nu                  " show line numbers
-set ruler               " always show cursor position.
-set showmode            " show the mode we're currently in.
-set showcmd             " always display commands.
-set showmatch           " highlight matching brackets/showbraces.
-set list                " enable listcharacters.
-set laststatus=2        " show status line.
-set cursorline          " visualize current line.
-set nopaste             " don't use stupid paste settings
-set colorcolumn=80      " add a line on the 80th character
+
+" -----------------------------------------------------------------------------
+" diff mode
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" mapping
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" reading and writing files
+" -----------------------------------------------------------------------------
+
 set autoread            " autoreload files after changes (works only in gui vim)
-set history=1000        " bigger history
-set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden characters
-set shortmess=a         " decrease message size to avoid the "Hit ENTER to continue" prompts
-
-" More natural position of new splits
-set splitbelow
-set splitright
-
-" Remember undo's even when buffer has been in the background.
-" Also allows for sending buffers to the background without saving...
-set hidden
 set autowrite
+set fileformat=unix     " always use unix fileformat.
 
-" persist undo files, to make sure we can undo after closing a file
-set undofile
+" -----------------------------------------------------------------------------
+" the swap file
+" -----------------------------------------------------------------------------
 
-silent execute '!mkdir -p $HOME/.vim/tmp/undo'
+" Do not pollute the working directory with swap and other files.
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" -----------------------------------------------------------------------------
+" command line editing
+" -----------------------------------------------------------------------------
+
+set history=1000        " bigger history
+set undofile            " persist undo files, to make sure we can undo after
+                        " closing a file
 set undodir=$HOME/.vim/tmp/undo
-
-" ----- File navigation -----
-
 set wildmenu           " display all possibilities on autocomplete.
 set wildmode=longest,list,full
 
-" ----- Command settings -----
+" -----------------------------------------------------------------------------
+" executing external commands
+" -----------------------------------------------------------------------------
+
 set shell=bash
 
-" ----- Movement -----
+" -----------------------------------------------------------------------------
+" running make and jumping to errors
+" -----------------------------------------------------------------------------
 
 
-" ----- Key bindings -----
+" -----------------------------------------------------------------------------
+" language specific
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" multi-byte characters
+" -----------------------------------------------------------------------------
+
+set encoding=utf-8       " force UTF-8 encoding.
+
+" -----------------------------------------------------------------------------
+" various
+" -----------------------------------------------------------------------------
+
+
+
+" -----------------------------------------------------------------------------
+" keybindings
+" -----------------------------------------------------------------------------
 
 " Make <Leader> char something more accessible on a AZERTY keyboard
 let mapleader = ","
@@ -84,35 +208,13 @@ nnoremap <C-]> g<C-]>
 nmap <c-n> ]]
 nmap <c-m> [[
 
-" ----- Clipboard -----
-
-" Copy to our clipboard
-set clipboard=unnamed
-
-" ----- Searching -----
-
-set ignorecase           " no case sensitivity please.
-set smartcase            " search case sensitive if i'm willing to.
-set incsearch            " do incremental search.
-
-" ----- Syntax and such -----
-
-syntax on                " enable syntax highlighting.
-set background=dark
+" ---- Syntax highlighting ----
+syntax on
 colorscheme solarized
-set synmaxcol=512        " try highlighting maximum 512 columns.
-
-" ----- Formatting -----
-
-set fileformat=unix      " always use unix fileformat.
-set encoding=utf-8       " force UTF-8 encoding.
 
 " ----- Autocomplete ----
-set tags+=./tags;/,./tags.vendors;/ " Add both normal and vendors tags file
 autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags ]; then /usr/local/bin/ctags -R src &2>/dev/null; fi;")
 autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags.vendor ]; then /usr/local/bin/ctags -R -f tags.vendors vendor &2>/dev/null; fi")
-set completeopt=longest,menuone
-set omnifunc=syntaxcomplete#Complete
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
@@ -142,9 +244,6 @@ let g:NERDTreeShowHidden = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
@@ -163,7 +262,6 @@ let g:syntastic_style_warning_symbol = "⚠"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-set runtimepath+=~/.vim/snippets
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim php namespace config
@@ -199,15 +297,13 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 " on save, remove trailing spaces.
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Do not pollute the working directory with swap and other files.
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " .tpl files are mainly (x)html files, xhtml gives better omni completion.
 autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 autocmd BufNewFile,BufRead *.xml.dist set filetype=xml
 autocmd BufNewFile,BufRead *.yml.dist set filetype=yaml
 autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
-autocmd FileType yaml setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " set phpunit as compiler for test files
 autocmd BufNewFile,BufRead *Test.php compiler phpunit

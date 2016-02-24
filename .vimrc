@@ -37,7 +37,7 @@ set tags+=./tags;/,./tags.vendors;/ " Add both normal and vendors tags file
 " -----------------------------------------------------------------------------
 
 set nowrap              " do not wrap lines.
-set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15
+set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15 " which font to use
 set number              " show line numbers
 set list                " enable listcharacters.
 set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden characters
@@ -48,7 +48,7 @@ set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden ch
 
 set laststatus=2        " show status line.
 set colorcolumn=80      " add a line on the 80th character
-set background=dark
+set background=dark     " The background color brightness
 set synmaxcol=512       " try highlighting maximum 512 columns.
 
 " -----------------------------------------------------------------------------
@@ -56,9 +56,9 @@ set synmaxcol=512       " try highlighting maximum 512 columns.
 " -----------------------------------------------------------------------------
 
 set cursorline          " visualize current line.
-set splitbelow
-set splitright
-set hidden
+set splitbelow          " a new horizontal split is always put on the bottom
+set splitright          " a new vertical split is always put at the right
+set hidden              " keep buffers in memory when not shown on window
 set statusline+=%#warningmsg# " Syntastic status line
 set statusline+=%{SyntasticStatuslineFlag()} " Syntastic status line
 set statusline+=%* " Syntastic status line
@@ -102,10 +102,10 @@ set clipboard=unnamed   " copy to our clipboard
 " editing text {{{1
 " -----------------------------------------------------------------------------
 
-set backspace=indent,eol,start
+set backspace=indent,eol,start "specifies what backspace can do in insert mode
 set showmatch           " highlight matching brackets/showbraces.
-set completeopt=longest,menuone
-set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone " style of autocomplete popup menu
+set omnifunc=syntaxcomplete#Complete " function for filetype specific completion
 
 " -----------------------------------------------------------------------------
 " tabs and indenting {{{1
@@ -115,10 +115,10 @@ set autoindent          " automatic indent new lines.
 set smartindent         " make it smart.
 set copyindent          " copy structure of existing lines.
 set cindent             " enable automatic C program indenting.
-set shiftwidth=4        " use four characters for tabs.
-set softtabstop=4       " mindblowing.
-set tabstop=4           " skullcracking.
-set expandtab
+set shiftwidth=4        " use four characters for indentation
+set softtabstop=4       " number of spaces inserted for a tab
+set tabstop=4           " number of spaces a tab stands for
+set expandtab           " use tabs instead of spaces in insert mode
 
 " -----------------------------------------------------------------------------
 " folding {{{1
@@ -140,7 +140,7 @@ set expandtab
 " -----------------------------------------------------------------------------
 
 set autoread            " autoreload files after changes (works only in gui vim)
-set autowrite
+set autowrite           " automatically write a file when leaving a modified buffer
 set fileformat=unix     " always use unix fileformat.
 
 " -----------------------------------------------------------------------------
@@ -157,9 +157,9 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set history=1000        " bigger history
 set undofile            " persist undo files, to make sure we can undo after
                         " closing a file
-set undodir=$HOME/.vim/tmp/undo
+set undodir=$HOME/.vim/tmp/undo " set the undo directory
 set wildmenu           " display all possibilities on autocomplete.
-set wildmode=longest,list,full
+set wildmode=longest,list,full " improves command line completion
 
 " -----------------------------------------------------------------------------
 " executing external commands {{{1
@@ -186,7 +186,6 @@ set encoding=utf-8       " force UTF-8 encoding.
 " -----------------------------------------------------------------------------
 " various {{{1
 " -----------------------------------------------------------------------------
-
 
 
 " -----------------------------------------------------------------------------

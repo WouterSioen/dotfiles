@@ -1,4 +1,4 @@
-vim:fdm=marker
+" vim:fdm=marker
 
 silent execute '!mkdir -p $HOME/.vim/tmp/undo'
 filetype plugin indent on

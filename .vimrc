@@ -309,7 +309,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " set phpunit as compiler for test files
 autocmd BufNewFile,BufRead *Test.php compiler phpunit
-autocmd BufWritePost *Test.php make %
+autocmd BufWritePost *Test.php Dispatch bin/phpunit
 
 " crontab can only be edited using these settings
 autocmd filetype crontab setlocal nobackup nowritebackup

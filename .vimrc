@@ -51,6 +51,19 @@ set colorcolumn=80      " add a line on the 80th character
 set background=dark     " The background color brightness
 set synmaxcol=512       " try highlighting maximum 512 columns.
 
+" set some filetypes for better autocompletion
+autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
+autocmd BufNewFile,BufRead *.xml.dist set filetype=xml
+autocmd BufNewFile,BufRead *.yml.dist set filetype=yaml
+autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
+
+" enable spelling om some filetypes
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
+
+" F7 toggles highlighted search.
+map <F7> :set hlsearch!<CR>
+
 " -----------------------------------------------------------------------------
 " multiple windows {{{1
 " -----------------------------------------------------------------------------
@@ -120,6 +133,8 @@ set softtabstop=4       " number of spaces inserted for a tab
 set tabstop=4           " number of spaces a tab stands for
 set expandtab           " use tabs instead of spaces in insert mode
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab " other defaults for yaml
+
 " -----------------------------------------------------------------------------
 " folding {{{1
 " -----------------------------------------------------------------------------
@@ -142,6 +157,9 @@ set expandtab           " use tabs instead of spaces in insert mode
 set autoread            " autoreload files after changes (works only in gui vim)
 set autowrite           " automatically write a file when leaving a modified buffer
 set fileformat=unix     " always use unix fileformat.
+
+" crontab can only be edited using these settings
+autocmd filetype crontab setlocal nobackup nowritebackup
 
 " -----------------------------------------------------------------------------
 " the swap file {{{1
@@ -289,29 +307,15 @@ let g:fugitive_gitlab_domains = ['http://git.sumocoders.be']
 
 " ----- Custom mapping -----
 
-" F7 toggles highlighted search.
-map <F7> :set hlsearch!<CR>
-
 " on editing, jump to last known cursor position.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 " on save, remove trailing spaces.
 autocmd BufWritePre * :%s/\s\+$//e
 
-
-" .tpl files are mainly (x)html files, xhtml gives better omni completion.
-autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
-autocmd BufNewFile,BufRead *.xml.dist set filetype=xml
-autocmd BufNewFile,BufRead *.yml.dist set filetype=yaml
-autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 " set phpunit as compiler for test files
 autocmd BufNewFile,BufRead *Test.php compiler phpunit
 autocmd BufWritePost *Test.php Dispatch bin/phpunit
-
-" crontab can only be edited using these settings
-autocmd filetype crontab setlocal nobackup nowritebackup
 
 " In the quickfix window, <CR> is used to jump to the error under the
 " cursor, so undefine the mapping there.
@@ -332,7 +336,3 @@ autocmd QuickFixCmdPost    l* nested lwindow
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
-
-" enable spelling om some filetypes
-autocmd FileType gitcommit setlocal spell
-autocmd FileType markdown setlocal spell

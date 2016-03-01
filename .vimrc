@@ -37,7 +37,7 @@ set tags+=./tags;/,./tags.vendors;/ " Add both normal and vendors tags file
 " -----------------------------------------------------------------------------
 
 set nowrap              " do not wrap lines.
-set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h15 " which font to use
+set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h14 " which font to use
 set number              " show line numbers
 set list                " enable listcharacters.
 set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden characters

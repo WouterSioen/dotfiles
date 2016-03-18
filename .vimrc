@@ -30,7 +30,7 @@ set smartcase            " search case sensitive if i'm willing to.
 " tags {{{1
 " -----------------------------------------------------------------------------
 
-set tags+=./tags;/,./tags.vendors;/ " Add both normal and vendors tags file
+set tags+=./tags;/       " Add our tags file
 
 " -----------------------------------------------------------------------------
 " displaying text {{{1
@@ -230,10 +230,6 @@ nmap <c-m> [[
 " ---- Syntax highlighting ----
 syntax on
 colorscheme solarized
-
-" ----- Autocomplete ----
-autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags ]; then /usr/local/bin/ctags -R src &2>/dev/null; fi;")
-autocmd BufReadPost *.php silent! :echom system("if [ ! -f tags.vendor ]; then /usr/local/bin/ctags -R -f tags.vendors vendor &2>/dev/null; fi")
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 

@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/vim-dispatch"]
 	path = .vim/bundle/vim-dispatch
 	url = git@github.com:tpope/vim-dispatch.git
+[submodule ".vim/bundle/vim-gutentags"]
+	path = .vim/bundle/vim-gutentags
+	url = git@github.com:ludovicchabant/vim-gutentags.git

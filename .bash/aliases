@@ -13,6 +13,8 @@ alias gum='git reset --merge ORIG_HEAD' # git undo merge
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 
+alias copysha='git log -1 | head -n1 | cut -d " " -f 2 | tr -d "\n" | pbcopy'
+
 # Fork CMS
 alias cc='cd tools && ./remove_cache && cd ..'
 

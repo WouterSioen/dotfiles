@@ -310,7 +310,6 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 autocmd BufWritePre * :%s/\s\+$//e
 
 " set phpunit as compiler for test files
-autocmd BufNewFile,BufRead *Test.php compiler phpunit
 autocmd BufWritePost *Test.php Dispatch bin/phpunit
 
 " In the quickfix window, <CR> is used to jump to the error under the

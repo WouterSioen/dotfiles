@@ -18,11 +18,13 @@
 /.node-gyp/
 /.npm/
 /.npmrc
+/.nvm
 /.pdepend/
 /.php_history
 /.pm2/
 /.pow
 /.powconfig
+/.rvm
 /.ssh/
 /.subversion/
 /.sumorc

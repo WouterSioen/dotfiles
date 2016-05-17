@@ -1,0 +1,19 @@
+priority 1
+
+snippet class "Class declaration template" b
+<?php
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+ * ${3}
+ */
+${2:final }class ${1:`!p snip.rv=snip.basename`}
+{
+}
+endsnippet

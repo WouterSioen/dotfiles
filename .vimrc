@@ -297,10 +297,7 @@ let g:vim_php_refactoring_default_method_visibility = 'private'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fugitive-gitlab config {{{1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:fugitive_gitlab_domains = ['http://git.sumocoders.be']
+
 
 " ----- Custom mapping -----
 

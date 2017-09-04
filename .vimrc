@@ -332,3 +332,21 @@ autocmd QuickFixCmdPost    l* nested lwindow
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+
+" PHP Find Usage
+noremap <Leader>fu :call PhpUsage('<cword>')<CR>
+function! PhpUsage(word)
+    exe 'Ack "::' . a:word . '\(|>' . a:word . '\("'
+endfunction
+
+" PHP Find Implementations
+noremap <Leader>fi :call PhpImplementations('<cword>')<CR>
+function! PhpImplementations(word)
+    exe 'Ack "implements.*' . a:word . ' *($|{)"'
+endfunction
+
+" PHP Find Subclasses
+noremap <Leader>fe :call PhpSubclasses('<cword>')<CR>
+function! PhpSubclasses(word)
+    exe 'Ack "extends.*' . a:word . ' *($|{)"'
+endfunction

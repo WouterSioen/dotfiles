@@ -24,6 +24,7 @@ set runtimepath+=~/.vim/my-snippets " adds snippets to our runtimepath
 " -----------------------------------------------------------------------------
 
 set incsearch            " do incremental search.
+set hlsearch             " hightlight search results
 set ignorecase           " no case sensitivity please.
 set smartcase            " search case sensitive if i'm willing to.
 
@@ -61,9 +62,6 @@ autocmd BufNewFile,BufRead *.twig set filetype=htmldjango
 " enable spelling om some filetypes
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
-
-" F7 toggles highlighted search.
-map <F7> :set hlsearch!<CR>
 
 " -----------------------------------------------------------------------------
 " multiple windows {{{1

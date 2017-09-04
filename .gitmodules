@@ -52,8 +52,8 @@
 [submodule ".vim/snippets"]
 	path = .vim/snippets
 	url = git@github.com:honza/vim-snippets.git
-[submodule "/Users/woutersioen/.vim/bundle/ack.vim"]
-	path = /Users/woutersioen/.vim/bundle/ack.vim
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
 [submodule ".vim/bundle/php-refactoring-toolbox"]
 	path = .vim/bundle/php-refactoring-toolbox

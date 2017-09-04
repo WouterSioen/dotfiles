@@ -76,3 +76,9 @@
 [submodule ".vim/bundle/vim-gutentags"]
 	path = .vim/bundle/vim-gutentags
 	url = git@github.com:ludovicchabant/vim-gutentags.git
+[submodule ".bash/.vim/bundle/vim-polyglot"]
+	path = .bash/.vim/bundle/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
+[submodule ".vim/bundle/vim-vue"]
+	path = .vim/bundle/vim-vue
+	url = git@github.com:posva/vim-vue.git

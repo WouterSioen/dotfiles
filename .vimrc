@@ -24,7 +24,7 @@ set runtimepath+=~/.vim/my-snippets " adds snippets to our runtimepath
 " -----------------------------------------------------------------------------
 
 set incsearch            " do incremental search.
-set hlsearch             " hightlight search results
+set nohlsearch           " don't hightlight search results
 set ignorecase           " no case sensitivity please.
 set smartcase            " search case sensitive if i'm willing to.
 

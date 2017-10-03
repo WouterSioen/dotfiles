@@ -16,6 +16,7 @@ call pathogen#helptags()
 
 set nocompatible         " use Vim defaults.
 set nopaste              " don't use stupid paste settings
+xnoremap p "_dP"         " don't put the content you paste over in the register
 set runtimepath+=~/.vim/snippets " adds snippets to our runtimepath
 set runtimepath+=~/.vim/my-snippets " adds snippets to our runtimepath
 

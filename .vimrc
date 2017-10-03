@@ -309,9 +309,6 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 " on save, remove trailing spaces.
 autocmd BufWritePre * :%s/\s\+$//e
 
-" set phpunit as compiler for test files
-autocmd BufWritePost *Test.php Dispatch bin/phpunit
-
 " In the quickfix window, <CR> is used to jump to the error under the
 " cursor, so undefine the mapping there.
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>

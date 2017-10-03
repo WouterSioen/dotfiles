@@ -10,4 +10,5 @@
 --exclude=*Test.php
 --exclude=composer.phar
 --langmap=php:.php
---PHP-kinds=+cfiv-j
+--fields=+aimlS
+--PHP-kinds=+cfivt

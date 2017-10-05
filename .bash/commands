@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# Does a recursive find and replace
+frp()
+{
+	search=$1
+	replace=$2
+	extension=$3
+
+	if [[ "$search" == "" ]] || [[ "$replace" == "" ]] || [[ "$extension" == "" ]]
+	then
+		echo "usage: frp <search> <replace> <extension>"
+	else
+		find . -type f -name "*.$extension" -exec sed -i '' -e "s/$search/$replace/g" {} +
+	fi
+}
+
 # creates an SSH key and uploads it to the given host
 addsshkey()
 {

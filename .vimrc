@@ -349,3 +349,7 @@ noremap <Leader>fe :call PhpSubclasses('<cword>')<CR>
 function! PhpSubclasses(word)
     exe 'Ack "extends.*' . a:word . ' *($|{)"'
 endfunction
+
+" sort php use statements
+autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>

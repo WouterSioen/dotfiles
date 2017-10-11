@@ -350,6 +350,13 @@ function! PhpSubclasses(word)
     exe 'Ack "extends.*' . a:word . ' *($|{)"'
 endfunction
 
+" Add use statement and sort
+noremap <Leader>us :call PhpAddUseStatementAndSort()<CR>
+function! PhpAddUseStatementAndSort()
+    :call PhpInsertUse()
+    :call PhpSortUse()
+endfunction
+
 " sort php use statements
 autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
 autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>

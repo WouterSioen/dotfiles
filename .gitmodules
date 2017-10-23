@@ -1,12 +1,18 @@
-[submodule ".vim/bundle/surround"]
-	path = .vim/bundle/surround
-	url = git://github.com/tpope/vim-surround.git
 [submodule ".bash/bundler-exec"]
 	path = .bash/bundler-exec
 	url = git@github.com:gma/bundler-exec.git
 [submodule ".git_template/hooks"]
 	path = .git_template/hooks
 	url = git@github.com:WouterSioen/pre-commit.git
+[submodule ".tmux/tmux-powerline"]
+	path = .tmux/tmux-powerline
+	url = https://github.com/erikw/tmux-powerline.git
+[submodule ".vim/snippets"]
+	path = .vim/snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
@@ -40,15 +46,9 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule ".tmux/tmux-powerline"]
-	path = .tmux/tmux-powerline
-	url = https://github.com/erikw/tmux-powerline.git
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
-[submodule ".vim/snippets"]
-	path = .vim/snippets
-	url = git@github.com:honza/vim-snippets.git
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git

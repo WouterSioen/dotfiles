@@ -149,11 +149,3 @@ install_precommit()
 	mv pre-commit .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
 }
-
-# Does some sneakers stuff
-sneakers()
-{
-	cd ~/Tools/sneakers
-	vagrant $*
-	cd - > /dev/null
-}

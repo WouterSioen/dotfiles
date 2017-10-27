@@ -61,6 +61,6 @@
 [submodule ".vim/pack/wouter/start/vim-rhubarb"]
 	path = .vim/pack/wouter/start/vim-rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
-[submodule ".vim/pack/wouter/start/delimitMate"]
-	path = .vim/pack/wouter/start/delimitMate
-	url = git@github.com:Raimondi/delimitMate.git
+[submodule ".vim/pack/wouter/start/auto-pairs"]
+	path = .vim/pack/wouter/start/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git

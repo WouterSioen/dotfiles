@@ -64,3 +64,6 @@
 [submodule ".vim/pack/wouter/start/auto-pairs"]
 	path = .vim/pack/wouter/start/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule ".vim/pack/wouter/start/ack.vim"]
+	path = .vim/pack/wouter/start/ack.vim
+	url = git@github.com:mileszs/ack.vim.git

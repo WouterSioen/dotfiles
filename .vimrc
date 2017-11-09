@@ -13,6 +13,8 @@ xnoremap p "_dP"         " don't put the content you paste over in the register
 set runtimepath+=~/.vim/snippets " adds snippets to our runtimepath
 set runtimepath+=~/.vim/my-snippets " adds snippets to our runtimepath
 
+set rtp+=/usr/local/opt/fzf
+
 " -----------------------------------------------------------------------------
 " moving around, searching, and patterns {{{1
 " -----------------------------------------------------------------------------
@@ -245,6 +247,8 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:ctrlp_use_caching = 0
+
+let g:ctrlp_cmd = 'FZF'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree configuration {{{1

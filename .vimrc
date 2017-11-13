@@ -359,3 +359,10 @@ endfunction
 " sort php use statements
 autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
 autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
+
+" -----------------------------------------------------------------------------
+" project specific vimrc files {{{1
+" -----------------------------------------------------------------------------
+
+set exrc " allow projects to have their specific vimrc files
+set secure " don't allow insecure commands in project specific vimrc files

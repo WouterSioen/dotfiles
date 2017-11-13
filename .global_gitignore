@@ -51,3 +51,7 @@ Thumbs.db
 # Vagrant #
 ###########
 .vagrant
+
+# project specific vimrc files #
+################################
+.vimrc

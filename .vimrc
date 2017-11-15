@@ -297,13 +297,29 @@ let g:vim_php_refactoring_default_property_visibility = 'private'
 let g:vim_php_refactoring_default_method_visibility = 'private'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airline config {{{1
+" lightline config {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
 
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'relativepath', 'modified' ] ],
+      \  'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'syntastic', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_expand': {
+      \   'syntastic': 'SyntasticStatuslineFlag'
+      \ },
+      \ 'component_type': {
+      \   'syntastic': 'error',
+      \ },
+      \ }
 
-
-" ----- Custom mapping -----
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom mapping {{{1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " on editing, jump to last known cursor position.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif

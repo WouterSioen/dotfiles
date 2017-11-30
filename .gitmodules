@@ -43,9 +43,6 @@
 [submodule ".vim/pack/wouter/start/vim-php-refactoring-toolbox"]
 	path = .vim/pack/wouter/start/vim-php-refactoring-toolbox
 	url = git@github.com:adoy/vim-php-refactoring-toolbox.git
-[submodule ".vim/pack/wouter/start/vim-airline-themes"]
-	path = .vim/pack/wouter/start/vim-airline-themes
-	url = git@github.com:vim-airline/vim-airline-themes.git
 [submodule ".vim/pack/wouter/start/vim-gutentags"]
 	path = .vim/pack/wouter/start/vim-gutentags
 	url = git@github.com:ludovicchabant/vim-gutentags.git

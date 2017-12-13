@@ -25,3 +25,21 @@ public function get${1/\w+\s*/\u$0/}()
     return $this->$1;$3
 }
 endsnippet
+
+snippet phpunit "PHPUnit test class" b
+<?php
+
+namespace ${3}${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+use PHPUnit\Framework\TestCase;
+
+${2:final }class ${1:`!p snip.rv=snip.basename`} extends TestCase
+{
+    ${4}
+}
+endsnippet

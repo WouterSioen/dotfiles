@@ -342,9 +342,11 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-" use ack instead of ag
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+" use rg instead of ack
+if executable('rg')
+    let g:ackprg = 'rg --vimgrep'
+    set grepprg=rg\ --vimgrep
+    set grepformat^=%f:%l:%c:%m
 endif
 
 " PHP Find Usage

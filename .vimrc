@@ -384,3 +384,11 @@ autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
 
 set exrc " allow projects to have their specific vimrc files
 set secure " don't allow insecure commands in project specific vimrc files
+
+" -----------------------------------------------------------------------------
+" Highlight yanked data {{{1
+" -----------------------------------------------------------------------------
+
+if !exists('##TextYankPost')
+  map y <Plug>(highlightedyank)
+endif

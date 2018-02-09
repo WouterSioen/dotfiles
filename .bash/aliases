@@ -28,3 +28,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# let's try neovim for a while
+alias vim='nvim'

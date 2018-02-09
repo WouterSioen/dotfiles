@@ -10,9 +10,6 @@
 [submodule ".vim/snippets"]
 	path = .vim/snippets
 	url = git@github.com:honza/vim-snippets.git
-[submodule ".vim/pack/wouter/start/ctrlp.vim"]
-	path = .vim/pack/wouter/start/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
 [submodule ".vim/pack/wouter/start/nerdtree"]
 	path = .vim/pack/wouter/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
@@ -67,3 +64,6 @@
 [submodule ".vim/pack/wouter/start/lightline.vim"]
 	path = .vim/pack/wouter/start/lightline.vim
 	url = git@github.com:itchyny/lightline.vim.git
+[submodule ".vim/pack/wouter/start/ctrlp.vim"]
+	path = .vim/pack/wouter/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

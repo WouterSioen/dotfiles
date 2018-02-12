@@ -55,3 +55,4 @@ Thumbs.db
 # project specific vimrc files #
 ################################
 .vimrc
+.nvimrc

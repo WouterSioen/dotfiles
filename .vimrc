@@ -286,10 +286,10 @@ if filereadable("ruleset.xml")
     let g:syntastic_php_phpcs_args="--standard=ruleset.xml -n --report=csv"
 endif
 let g:syntastic_php_phpmd_post_args = 'codesize,controversial,design,unusedcode'
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_style_error_symbol = "✗"
-let g:syntastic_style_warning_symbol = "⚠"
+let g:syntastic_error_symbol = ">>"
+let g:syntastic_warning_symbol = ">>"
+let g:syntastic_style_error_symbol = ">>"
+let g:syntastic_style_warning_symbol = ">>"
 let g:syntastic_aggregate_errors = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

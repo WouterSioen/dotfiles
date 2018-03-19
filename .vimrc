@@ -45,7 +45,6 @@ set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden ch
 " -----------------------------------------------------------------------------
 
 set laststatus=2        " show status line.
-set colorcolumn=80      " add a line on the 80th character
 set background=dark     " The background color brightness
 set synmaxcol=512       " try highlighting maximum 512 columns.
 

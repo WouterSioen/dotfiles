@@ -255,12 +255,15 @@ let g:ctrlp_cmd = 'FZF'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show hidden files by default
 let g:NERDTreeShowHidden = 1
-let NERDTreeDirArrowExpandable = " "
-let NERDTreeDirArrowCollapsible = " "
+"let NERDTreeDirArrowExpandable = " "
+"let NERDTreeDirArrowCollapsible = " "
+let NERDTreeMinimalUI=1
+let NERDTreeIgnore=['.idea']
 
 " devicons config
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 
 " hides non breaking spaces in our NERDTree view
 autocmd FileType nerdtree setlocal nolist

@@ -224,6 +224,8 @@ nmap <c-m> [[
 " ---- Syntax highlighting ----
 syntax on
 colorscheme solarized
+highlight LineNr ctermbg=none
+highlight SignColumn ctermbg=none
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 

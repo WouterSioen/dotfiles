@@ -306,7 +306,7 @@ let g:lightline = {
       \             [ 'readonly', 'relativepath', 'modified' ] ],
       \  'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'syntastic', 'fileencoding', 'filetype' ] ]
+      \              [ 'syntastic', 'filetype' ] ]
       \ },
       \ 'component_expand': {
       \   'syntastic': 'SyntasticStatuslineFlag'
@@ -314,6 +314,9 @@ let g:lightline = {
       \ 'component_type': {
       \   'syntastic': 'error',
       \ },
+      \ 'component_function': {
+      \   'filetype': 'WebDevIconsGetFileTypeSymbol',
+      \ }
       \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

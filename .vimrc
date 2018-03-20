@@ -258,6 +258,8 @@ let g:ctrlp_cmd = 'FZF'
 let g:NERDTreeShowHidden = 1
 "let NERDTreeDirArrowExpandable = " "
 "let NERDTreeDirArrowCollapsible = " "
+highlight NERDTreeOpenable ctermfg=bg
+highlight NERDTreeClosable ctermfg=bg
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['.idea']
 

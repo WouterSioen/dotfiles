@@ -70,6 +70,3 @@
 [submodule ".vim/pack/wouter/start/vim-deviocons"]
 	path = .vim/pack/wouter/start/vim-deviocons
 	url = git@github.com:ryanoasis/vim-devicons.git
-[submodule ".vim/pack/wouter/start/ctrlp.vim"]
-	path = .vim/pack/wouter/start/ctrlp.vim
-	url = git@github.com:ctrlpvim/ctrlp.vim.git

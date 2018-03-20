@@ -15,6 +15,9 @@ set runtimepath+=~/.vim/my-snippets " adds snippets to our runtimepath
 
 set rtp+=/usr/local/opt/fzf
 
+" trigger FZF by using <c-p> shortcut
+map <c-p> :Files<CR>
+
 " -----------------------------------------------------------------------------
 " moving around, searching, and patterns {{{1
 " -----------------------------------------------------------------------------
@@ -225,31 +228,9 @@ nmap <c-m> [[
 syntax on
 colorscheme solarized
 highlight LineNr ctermbg=none
-highlight SignColumn ctermbg=none
+highlight! link SignColumn LineNr
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP configuration {{{1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_working_path_mode = 'ra'
-
-" Tell ctrlp some new settings
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|vendor$\|web$\|coverage$\|bower_components$\|code-coverage$\|code-documentation$\|cookbooks$\|Resources\/doc$\|frontend\/files$\|compiled_templates$',
-    \ 'file': '\.exe$\|\.so$\|\.swp\|\.DS_STORE\|.php\~$',
-    \ }
-
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"if executable('ag')
-    "let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
-    "let g:ctrlp_use_caching = 0
-"endif
-
-let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
-let g:ctrlp_use_caching = 0
-
-let g:ctrlp_cmd = 'FZF'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree configuration {{{1

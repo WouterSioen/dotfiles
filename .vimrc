@@ -274,6 +274,7 @@ let g:syntastic_warning_symbol = ">>"
 let g:syntastic_style_error_symbol = ">>"
 let g:syntastic_style_warning_symbol = ">>"
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_stl_format = "line %F (%t)"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultisnips config {{{1

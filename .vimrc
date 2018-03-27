@@ -230,8 +230,6 @@ colorscheme solarized
 highlight LineNr ctermbg=none
 highlight! link SignColumn LineNr
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree configuration {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

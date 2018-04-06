@@ -7,5 +7,5 @@ brew update && brew upgrade
 git pull --ff-only
 
 # Update submodules
-git submodule foreach git pull origin master
+git submodule update --remote
 

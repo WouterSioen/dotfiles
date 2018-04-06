@@ -73,3 +73,4 @@
 [submodule ".vim/pack/wouter/start/LanguageClient-neovim"]
 	path = .vim/pack/wouter/start/LanguageClient-neovim
 	url = git@github.com:autozimu/LanguageClient-neovim.git
+	branch = next

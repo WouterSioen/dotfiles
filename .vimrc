@@ -193,6 +193,7 @@ set shell=bash
 
 " register and start language server
 let g:LanguageClient_serverCommands = {'php':[ 'php', '~/.composer/vendor/bin/php-language-server.php' ]}
+let g:LanguageClient_diagnosticsEnable = 0
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>

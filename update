@@ -3,9 +3,5 @@
 # Update brew dependencies
 brew update && brew upgrade
 
-# Update my dotfiles
-git pull --ff-only
-
 # Update submodules
 git submodule update --remote
-

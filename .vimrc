@@ -115,7 +115,7 @@ set clipboard=unnamed   " copy to our clipboard
 set backspace=indent,eol,start "specifies what backspace can do in insert mode
 set showmatch           " highlight matching brackets/showbraces.
 set completeopt=longest,menuone " style of autocomplete popup menu
-set omnifunc=syntaxcomplete#Complete " function for filetype specific completion
+"set omnifunc=syntaxcomplete#Complete " function for filetype specific completion
 
 " -----------------------------------------------------------------------------
 " tabs and indenting {{{1
@@ -174,7 +174,7 @@ set undofile            " persist undo files, to make sure we can undo after
                         " closing a file
 set undodir=$HOME/.vim/tmp/undo " set the undo directory
 set wildmenu           " display all possibilities on autocomplete.
-set wildmode=longest,list,full " improves command line completion
+set wildmode=list:longest,full " improves command line completion
 
 " -----------------------------------------------------------------------------
 " executing external commands {{{1
@@ -191,6 +191,12 @@ set shell=bash
 " language specific {{{1
 " -----------------------------------------------------------------------------
 
+" register and start language server
+let g:LanguageClient_serverCommands = {'php':[ 'php', '~/.composer/vendor/bin/php-language-server.php' ]}
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " -----------------------------------------------------------------------------
 " multi-byte characters {{{1

@@ -70,3 +70,9 @@
 [submodule ".vim/pack/wouter/start/vim-deviocons"]
 	path = .vim/pack/wouter/start/vim-deviocons
 	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule ".vim/pack/wouter/start/nvim-completion-manager"]
+	path = .vim/pack/wouter/start/nvim-completion-manager
+	url = git@github.com:roxma/nvim-completion-manager.git
+[submodule ".vim/pack/wouter/start/LanguageClient-neovim"]
+	path = .vim/pack/wouter/start/LanguageClient-neovim
+	url = git@github.com:autozimu/LanguageClient-neovim.git

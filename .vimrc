@@ -248,6 +248,7 @@ highlight NERDTreeOpenable ctermfg=bg
 highlight NERDTreeClosable ctermfg=bg
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['.idea']
+let g:NERDTreeWinSize = 30
 
 " devicons config
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1

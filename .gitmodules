@@ -74,3 +74,6 @@
 	path = .vim/pack/wouter/start/LanguageClient-neovim
 	url = git@github.com:autozimu/LanguageClient-neovim.git
 	branch = next
+[submodule ".vim/pack/wouter/start/apiblueprint.vim"]
+	path = .vim/pack/wouter/start/apiblueprint.vim
+	url = git@github.com:kylef/apiblueprint.vim.git

@@ -19,6 +19,7 @@ tags.lock
 !tags/
 tags.vendors
 !tags.vendors/
+.php_cs.cache
 
 # Packages #
 ############

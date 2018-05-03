@@ -69,9 +69,6 @@ set cursorline          " visualize current line.
 set splitbelow          " a new horizontal split is always put on the bottom
 set splitright          " a new vertical split is always put at the right
 set hidden              " keep buffers in memory when not shown on window
-set statusline+=%#warningmsg# " Syntastic status line
-set statusline+=%{SyntasticStatuslineFlag()} " Syntastic status line
-set statusline+=%* " Syntastic status line
 
 " -----------------------------------------------------------------------------
 " multiple tab pages {{{1
@@ -262,25 +259,13 @@ autocmd FileType nerdtree setlocal nolist
 "set conceallevel=3
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic configuration {{{1
+" Ale configuration {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_php_phpcs_args="--standard=PSR2 -n --report=csv"
-if filereadable("ruleset.xml")
-    let g:syntastic_php_phpcs_args="--standard=ruleset.xml -n --report=csv"
-endif
-let g:syntastic_php_phpmd_post_args = 'codesize,controversial,design,unusedcode'
-let g:syntastic_error_symbol = ">>"
-let g:syntastic_warning_symbol = ">>"
-let g:syntastic_style_error_symbol = ">>"
-let g:syntastic_style_warning_symbol = ">>"
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_stl_format = "line %F (%t)"
+let g:ale_php_phpmd_ruleset = 'codesize,controversial,design,unusedcode'
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '>>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultisnips config {{{1
@@ -313,17 +298,30 @@ let g:lightline = {
       \             [ 'readonly', 'relativepath', 'modified' ] ],
       \  'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'syntastic', 'filetype' ] ]
-      \ },
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag'
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
+      \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ]
       \ },
       \ 'component_function': {
       \   'filetype': 'WebDevIconsGetFileTypeSymbol',
       \ }
+      \ }
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
       \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -25,9 +25,6 @@
 [submodule ".vim/pack/wouter/start/vim-colors-solarized"]
 	path = .vim/pack/wouter/start/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/pack/wouter/start/syntastic"]
-	path = .vim/pack/wouter/start/syntastic
-	url = git@github.com:vim-syntastic/syntastic.git
 [submodule ".vim/pack/wouter/start/vim-php-namespace"]
 	path = .vim/pack/wouter/start/vim-php-namespace
 	url = git@github.com:arnaud-lb/vim-php-namespace.git
@@ -77,3 +74,9 @@
 [submodule ".vim/pack/wouter/start/apiblueprint.vim"]
 	path = .vim/pack/wouter/start/apiblueprint.vim
 	url = git@github.com:kylef/apiblueprint.vim.git
+[submodule ".vim/pack/wouter/start/ale"]
+	path = .vim/pack/wouter/start/ale
+	url = git@github.com:w0rp/ale.git
+[submodule ".vim/pack/wouter/start/lightline-ale"]
+	path = .vim/pack/wouter/start/lightline-ale
+	url = git@github.com:maximbaz/lightline-ale.git

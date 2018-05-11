@@ -43,3 +43,13 @@ ${2:final }class ${1:`!p snip.rv=snip.basename`} extends TestCase
     ${4}
 }
 endsnippet
+
+snippet construct "__construct()" b
+/**
+ * @param$2 ${1/, /\n     * \@param /g}
+ */
+public function __construct(${1:$dependencies})
+{${1/\w* ?\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
+}
+$0
+endsnippet

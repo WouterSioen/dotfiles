@@ -16,6 +16,22 @@ ${2:final }class ${1:`!p snip.rv=snip.basename`}
 }
 endsnippet
 
+snippet interface "Interface declaration template" b
+<?php
+
+namespace ${2}${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+interface ${1:`!p snip.rv=snip.basename`}
+{
+	public function ${3:someFunction}();$4
+}
+endsnippet
+
 snippet getter "PHP Class Getter" b
 /**
  * @return ${2:string}

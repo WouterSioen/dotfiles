@@ -80,3 +80,6 @@
 [submodule ".vim/pack/wouter/start/ncm2"]
 	path = .vim/pack/wouter/start/ncm2
 	url = git@github.com:ncm2/ncm2.git
+[submodule ".vim/pack/wouter/start/nvim-yarp"]
+	path = .vim/pack/wouter/start/nvim-yarp
+	url = git@github.com:roxma/nvim-yarp.git

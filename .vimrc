@@ -48,7 +48,7 @@ set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:· "show hidden ch
 " -----------------------------------------------------------------------------
 
 set laststatus=2        " show status line.
-set background=dark     " The background color brightness
+set background=light     " The background color brightness
 set synmaxcol=512       " try highlighting maximum 512 columns.
 
 " set some filetypes for better autocompletion
@@ -231,6 +231,7 @@ nmap <c-m> [[
 " ---- Syntax highlighting ----
 syntax on
 colorscheme solarized
+"set background=light
 highlight LineNr ctermbg=none
 highlight! link SignColumn LineNr
 

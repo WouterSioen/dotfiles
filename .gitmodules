@@ -83,3 +83,12 @@
 [submodule ".vim/pack/wouter/start/nvim-yarp"]
 	path = .vim/pack/wouter/start/nvim-yarp
 	url = git@github.com:roxma/nvim-yarp.git
+[submodule ".vim/pack/wouter/start/vim-prettier"]
+	path = .vim/pack/wouter/start/vim-prettier
+	url = git@github.com:prettier/vim-prettier.git
+[submodule ".vim/pack/wouter/start/vim-javascript"]
+	path = .vim/pack/wouter/start/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule ".vim/pack/wouter/start/vim-jsx"]
+	path = .vim/pack/wouter/start/vim-jsx
+	url = git@github.com:mxw/vim-jsx.git

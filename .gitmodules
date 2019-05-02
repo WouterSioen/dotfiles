@@ -92,3 +92,6 @@
 [submodule ".vim/pack/wouter/start/vim-jsx"]
 	path = .vim/pack/wouter/start/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
+[submodule ".vim/pack/wouter/start/vim-graphql"]
+	path = .vim/pack/wouter/start/vim-graphql
+	url = git@github.com:jparise/vim-graphql.git

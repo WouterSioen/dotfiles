@@ -64,10 +64,6 @@
 [submodule ".vim/pack/wouter/start/vim-deviocons"]
 	path = .vim/pack/wouter/start/vim-deviocons
 	url = git@github.com:ryanoasis/vim-devicons.git
-[submodule ".vim/pack/wouter/start/LanguageClient-neovim"]
-	path = .vim/pack/wouter/start/LanguageClient-neovim
-	url = git@github.com:autozimu/LanguageClient-neovim.git
-	branch = next
 [submodule ".vim/pack/wouter/start/apiblueprint.vim"]
 	path = .vim/pack/wouter/start/apiblueprint.vim
 	url = git@github.com:kylef/apiblueprint.vim.git
@@ -77,9 +73,6 @@
 [submodule ".vim/pack/wouter/start/lightline-ale"]
 	path = .vim/pack/wouter/start/lightline-ale
 	url = git@github.com:maximbaz/lightline-ale.git
-[submodule ".vim/pack/wouter/start/ncm2"]
-	path = .vim/pack/wouter/start/ncm2
-	url = git@github.com:ncm2/ncm2.git
 [submodule ".vim/pack/wouter/start/nvim-yarp"]
 	path = .vim/pack/wouter/start/nvim-yarp
 	url = git@github.com:roxma/nvim-yarp.git
@@ -95,3 +88,6 @@
 [submodule ".vim/pack/wouter/start/vim-graphql"]
 	path = .vim/pack/wouter/start/vim-graphql
 	url = git@github.com:jparise/vim-graphql.git
+[submodule ".vim/pack/wouter/start/coc-nvim"]
+	path = .vim/pack/wouter/start/coc-nvim
+	url = git@github.com:neoclide/coc.nvim.git

@@ -265,6 +265,7 @@ autocmd FileType nerdtree setlocal nolist
 
 let g:ale_php_phpmd_ruleset = 'codesize,controversial,design,unusedcode'
 let g:ale_php_phpcs_standard = 'PSR2'
+let g:ale_php_phpstan_level = '4'
 
 let g:ale_linters = {
 \   'php': ['php', 'phpcs', 'phpmd', 'phpstan'],

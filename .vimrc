@@ -114,6 +114,9 @@ set showmatch           " highlight matching brackets/showbraces.
 set completeopt=longest,menuone " style of autocomplete popup menu
 "set omnifunc=syntaxcomplete#Complete " function for filetype specific completion
 
+set completeopt=noinsert,menuone,noselect
+set shortmess+=c
+
 " -----------------------------------------------------------------------------
 " tabs and indenting {{{1
 " -----------------------------------------------------------------------------
@@ -188,13 +191,16 @@ set shell=bash
 " language specific {{{1
 " -----------------------------------------------------------------------------
 
-" register and start language server
-let g:LanguageClient_serverCommands = {'php':[ 'php', '~/.composer/vendor/bin/php-language-server.php' ]}
-let g:LanguageClient_diagnosticsEnable = 0
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " -----------------------------------------------------------------------------
 " multi-byte characters {{{1

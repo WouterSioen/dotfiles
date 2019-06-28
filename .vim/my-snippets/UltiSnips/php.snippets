@@ -1,18 +1,18 @@
 priority 1
 
 snippet class "Class declaration template" b
-<?php
+<?php ${2:declare(strict_types=1);}
 
-namespace ${3}${1:`!p
+namespace ${4}${1:`!p
 relpath = os.path.relpath(path)
 m = re.search(r'[A-Z].+(?=/)', relpath)
 if m:
 	snip.rv = m.group().replace('/', '\\')
 `};
 
-${2:final }class ${1:`!p snip.rv=snip.basename`}
+${3:final }class ${1:`!p snip.rv=snip.basename`}
 {
-    ${4}
+    ${5}
 }
 endsnippet
 
@@ -43,9 +43,9 @@ public function get${1/\w+\s*/\u$0/}()
 endsnippet
 
 snippet phpunit "PHPUnit test class" b
-<?php
+<?php  ${2:declare(strict_types=1);}
 
-namespace ${3}${1:`!p
+namespace ${4}${1:`!p
 relpath = os.path.relpath(path)
 m = re.search(r'[A-Z].+(?=/)', relpath)
 if m:
@@ -54,9 +54,9 @@ if m:
 
 use PHPUnit\Framework\TestCase;
 
-${2:final }class ${1:`!p snip.rv=snip.basename`} extends TestCase
+${3:final }class ${1:`!p snip.rv=snip.basename`} extends TestCase
 {
-    ${4}
+    ${5}
 }
 endsnippet
 

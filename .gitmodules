@@ -91,3 +91,12 @@
 [submodule ".vim/pack/wouter/start/coc-nvim"]
 	path = .vim/pack/wouter/start/coc-nvim
 	url = git@github.com:neoclide/coc.nvim.git
+[submodule ".vim/pack/wouter/start/vim-vue"]
+	path = .vim/pack/wouter/start/vim-vue
+	url = git@github.com:posva/vim-vue.git
+[submodule ".vim/pack/wouter/start/fugitive-gitlab"]
+	path = .vim/pack/wouter/start/fugitive-gitlab
+	url = git@github.com:shumphrey/fugitive-gitlab.vim.git
+[submodule ".vim/pack/wouter/start/tsuquyomi"]
+	path = .vim/pack/wouter/start/tsuquyomi
+	url = git@github.com:Quramy/tsuquyomi.git

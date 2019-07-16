@@ -18,6 +18,8 @@ set rtp+=/usr/local/opt/fzf
 " trigger FZF by using <c-p> shortcut
 map <c-p> :Files<CR>
 
+let $FZF_DEFAULT_COMMAND = 'fd --type f'
+
 " -----------------------------------------------------------------------------
 " moving around, searching, and patterns {{{1
 " -----------------------------------------------------------------------------

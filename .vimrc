@@ -276,7 +276,8 @@ let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_php_phpstan_level = '4'
 
 let g:ale_linters = {
-\   'php': ['php', 'phpcs', 'phpmd', 'phpstan'],
+\   'php': ['php', 'phpcs', 'phpmd', 'phpstan', 'psalm'],
+\   'typescript': ['tsserver', 'tslint', 'prettier'],
 \   'html': ['htmlhint'],
 \}
 

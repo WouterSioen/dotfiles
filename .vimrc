@@ -113,10 +113,9 @@ set clipboard=unnamed   " copy to our clipboard
 
 set backspace=indent,eol,start "specifies what backspace can do in insert mode
 set showmatch           " highlight matching brackets/showbraces.
-set completeopt=longest,menuone " style of autocomplete popup menu
+set completeopt=menu,preview,longest " style of autocomplete popup menu
 "set omnifunc=syntaxcomplete#Complete " function for filetype specific completion
 
-set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 
 " -----------------------------------------------------------------------------
@@ -196,6 +195,9 @@ set shell=bash
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
+" try <c-space> for autocompletion
+inoremap <silent><expr> <c-space> coc#refresh()
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -203,6 +205,22 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
 
 " -----------------------------------------------------------------------------
 " multi-byte characters {{{1

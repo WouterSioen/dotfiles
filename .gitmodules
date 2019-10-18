@@ -16,9 +16,6 @@
 [submodule ".vim/pack/wouter/start/editorconfig-vim"]
 	path = .vim/pack/wouter/start/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
-[submodule ".vim/pack/wouter/start/supertab"]
-	path = .vim/pack/wouter/start/supertab
-	url = git@github.com:ervandew/supertab.git
 [submodule ".vim/pack/wouter/start/phpcomplete.vim"]
 	path = .vim/pack/wouter/start/phpcomplete.vim
 	url = git://github.com/shawncplus/phpcomplete.vim.git

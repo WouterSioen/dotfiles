@@ -31,3 +31,9 @@ fi
 
 # let's try neovim for a while
 alias vim='nvim'
+
+# use bat over cat
+alias cat='bat'
+export BAT_THEME="Solarized (light)"
+
+alias python=/usr/local/bin/python3

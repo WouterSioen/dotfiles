@@ -327,9 +327,6 @@ let g:lightline.component_type = {
 " on editing, jump to last known cursor position.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
-" on save, remove trailing spaces.
-autocmd BufWritePre * :%s/\s\+$//e
-
 " In the quickfix window, <CR> is used to jump to the error under the
 " cursor, so undefine the mapping there.
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>

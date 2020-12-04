@@ -13,9 +13,6 @@
 [submodule ".vim/pack/wouter/start/vim-sensible"]
 	path = .vim/pack/wouter/start/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git
-[submodule ".vim/pack/wouter/start/editorconfig-vim"]
-	path = .vim/pack/wouter/start/editorconfig-vim
-	url = git@github.com:editorconfig/editorconfig-vim.git
 [submodule ".vim/pack/wouter/start/phpcomplete.vim"]
 	path = .vim/pack/wouter/start/phpcomplete.vim
 	url = git://github.com/shawncplus/phpcomplete.vim.git
@@ -61,30 +58,18 @@
 [submodule ".vim/pack/wouter/start/vim-deviocons"]
 	path = .vim/pack/wouter/start/vim-deviocons
 	url = git@github.com:ryanoasis/vim-devicons.git
-[submodule ".vim/pack/wouter/start/apiblueprint.vim"]
-	path = .vim/pack/wouter/start/apiblueprint.vim
-	url = git@github.com:kylef/apiblueprint.vim.git
 [submodule ".vim/pack/wouter/start/ale"]
 	path = .vim/pack/wouter/start/ale
 	url = git@github.com:w0rp/ale.git
 [submodule ".vim/pack/wouter/start/lightline-ale"]
 	path = .vim/pack/wouter/start/lightline-ale
 	url = git@github.com:maximbaz/lightline-ale.git
-[submodule ".vim/pack/wouter/start/nvim-yarp"]
-	path = .vim/pack/wouter/start/nvim-yarp
-	url = git@github.com:roxma/nvim-yarp.git
 [submodule ".vim/pack/wouter/start/vim-prettier"]
 	path = .vim/pack/wouter/start/vim-prettier
 	url = git@github.com:prettier/vim-prettier.git
 [submodule ".vim/pack/wouter/start/vim-javascript"]
 	path = .vim/pack/wouter/start/vim-javascript
 	url = git@github.com:pangloss/vim-javascript.git
-[submodule ".vim/pack/wouter/start/vim-jsx"]
-	path = .vim/pack/wouter/start/vim-jsx
-	url = git@github.com:mxw/vim-jsx.git
-[submodule ".vim/pack/wouter/start/vim-graphql"]
-	path = .vim/pack/wouter/start/vim-graphql
-	url = git@github.com:jparise/vim-graphql.git
 [submodule ".vim/pack/wouter/start/vim-vue"]
 	path = .vim/pack/wouter/start/vim-vue
 	url = git@github.com:posva/vim-vue.git

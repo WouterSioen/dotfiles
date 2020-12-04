@@ -361,7 +361,7 @@ endfunction
 " PHP Find Implementations
 noremap <Leader>fi :call PhpImplementations('<cword>')<CR>
 function! PhpImplementations(word)
-    exe 'Ack "implements.*' . a:word . ' *($|{)"'
+    exe 'Ack "implements.*[ |,]' . a:word . '"'
 endfunction
 
 " PHP Find Subclasses

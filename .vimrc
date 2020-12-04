@@ -247,6 +247,8 @@ autocmd FileType nerdtree setlocal nolist
 let g:ale_php_phpmd_ruleset = 'codesize,design,unusedcode'
 let g:ale_php_phpstan_level = '4'
 
+let g:ale_php_phpcs_standard = 'PSR2'
+
 let g:ale_linters = {
 \   'php': ['php', 'phpcs', 'phpmd', 'phpstan', 'psalm'],
 \   'typescript': ['tsserver', 'tslint', 'prettier'],
@@ -254,7 +256,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   '*': [],
 \}
 let g:ale_fix_on_save = 1
 

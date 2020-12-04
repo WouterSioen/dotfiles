@@ -1,14 +1,6 @@
 {
-    "languageserver": {
-        "intelephense": {
-            "command": "intelephense",
-            "args": ["--stdio"],
-            "filetypes": ["php"],
-            "initializationOptions": {
-                "storagePath": "/tmp/intelephense"
-            }
-        }
-    },
     "diagnostic.enable": false,
     "suggest.autoTrigger": "trigger",
+    "suggest.minTriggerInputLength": 2,
+    "suggest.noselect": false
 }

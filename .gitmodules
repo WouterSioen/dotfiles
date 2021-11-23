@@ -80,3 +80,6 @@
 	path = .vim/pack/wouter/start/coc-nvim
 	url = git@github.com:neoclide/coc.nvim.git
 	branch = release
+[submodule ".vim/pack/wouter/start/fzf"]
+	path = .vim/pack/wouter/start/fzf
+	url = git@github.com:junegunn/fzf.git

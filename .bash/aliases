@@ -37,3 +37,5 @@ alias cat='bat'
 export BAT_THEME="Solarized (light)"
 
 alias python=/usr/local/bin/python3
+
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'

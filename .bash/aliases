@@ -14,10 +14,6 @@ alias gc='git commit -v'
 alias gca='git commit -v -a'
 
 alias copysha='git log -1 | head -n1 | cut -d " " -f 2 | tr -d "\n" | pbcopy'
-alias copymigration='app/console doctrine:migrations:latest | pbcopy'
-
-# Fork CMS
-alias cc='cd tools && ./remove_cache && cd .. && rm -rf app/cache/dev'
 
 # colors
 alias phpunit='phpunit --colors'

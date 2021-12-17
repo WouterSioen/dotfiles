@@ -31,12 +31,9 @@
 
 [init]
     templatedir = ~/.git_template
-
-[difftool "p4merge"]
-    cmd= /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
+	defaultBranch = main
 
 [diff]
-    tool = p4merge
     algorithm = patience
     colorMoved = default
 

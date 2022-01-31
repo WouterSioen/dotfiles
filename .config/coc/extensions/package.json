@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "coc-phpactor": ">=1.0.3",
+    "coc-ultisnips": ">=1.2.3"
+  }
+}

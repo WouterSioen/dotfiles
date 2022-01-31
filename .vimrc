@@ -13,7 +13,7 @@ xnoremap p "_dP"         " don't put the content you paste over in the register
 set runtimepath+=~/.vim/snippets " adds snippets to our runtimepath
 set runtimepath+=~/.vim/my-snippets " adds snippets to our runtimepath
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/bin/fzf
 
 " trigger FZF by using <c-p> shortcut
 map <c-p> :Files<CR>

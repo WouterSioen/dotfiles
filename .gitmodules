@@ -1,9 +1,6 @@
 [submodule ".git_template/hooks"]
 	path = .git_template/hooks
 	url = git@github.com:WouterSioen/pre-commit.git
-[submodule ".tmux/tmux-powerline"]
-	path = .tmux/tmux-powerline
-	url = https://github.com/erikw/tmux-powerline.git
 [submodule ".vim/snippets"]
 	path = .vim/snippets
 	url = git@github.com:honza/vim-snippets.git

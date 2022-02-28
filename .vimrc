@@ -231,6 +231,9 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['.idea']
 let g:NERDTreeWinSize = 30
 
+" hide status line on NERDTREE windows
+let g:NERDTreeStatusline = '%#NonText#'
+
 " devicons config
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
@@ -261,6 +264,10 @@ let g:ale_fixers = {
 \   '*': [],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_floating_preview = 1
+let g:ale_hover_to_floating_preview = 1
+let g:ale_cursor_detail = 1
+let g:ale_floating_window_border = []
 
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '>>'
@@ -294,9 +301,11 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'relativepath', 'modified' ] ],
-      \  'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ]
+      \  'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'relativepath'] ],
+      \  'right': [ ]
       \ },
       \ 'component_function': {
       \   'filetype': 'WebDevIconsGetFileTypeSymbol',

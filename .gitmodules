@@ -10,9 +10,6 @@
 [submodule ".vim/pack/wouter/start/vim-sensible"]
 	path = .vim/pack/wouter/start/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git
-[submodule ".vim/pack/wouter/start/vim-colors-solarized"]
-	path = .vim/pack/wouter/start/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/pack/wouter/start/vim-php-namespace"]
 	path = .vim/pack/wouter/start/vim-php-namespace
 	url = git@github.com:arnaud-lb/vim-php-namespace.git
@@ -80,3 +77,6 @@
 [submodule ".vim/pack/wouter/start/fzf"]
 	path = .vim/pack/wouter/start/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule ".vim/pack/wouter/start/vim-colors-solarized"]
+	path = .vim/pack/wouter/start/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git

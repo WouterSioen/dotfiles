@@ -1,5 +1,6 @@
 {
     "diagnostic.enable": false,
+    "diagnostic.displayByAle": true,
     "suggest.autoTrigger": "trigger",
     "suggest.minTriggerInputLength": 2,
     "suggest.noselect": false,

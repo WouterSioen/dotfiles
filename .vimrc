@@ -169,17 +169,17 @@ function! s:show_documentation()
 endfunction
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 let g:coc_snippet_next = '<tab>'
+
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
@@ -213,37 +213,10 @@ nmap <c-m> [[
 
 " ---- Syntax highlighting ----
 syntax on
-colorscheme solarized
-"set background=light
 highlight LineNr ctermbg=none
 highlight! link SignColumn LineNr
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree configuration {{{1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" show hidden files by default
-let g:NERDTreeShowHidden = 1
-"let NERDTreeDirArrowExpandable = " "
-"let NERDTreeDirArrowCollapsible = " "
-highlight NERDTreeOpenable ctermfg=bg
-highlight NERDTreeClosable ctermfg=bg
-let NERDTreeMinimalUI=1
-let NERDTreeIgnore=['.idea']
-let g:NERDTreeWinSize = 30
-
-" hide status line on NERDTREE windows
-let g:NERDTreeStatusline = '%#NonText#'
-
-" devicons config
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-
-" hides non breaking spaces in our NERDTree view
-autocmd FileType nerdtree setlocal nolist
-
-" this should hide squre brackets before icons but it doesn't. To investigate
-"set conceallevel=3
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale configuration {{{1
@@ -262,11 +235,13 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   '*': [],
+\   'python': ['autoflake', 'black', 'isort'],
 \}
 let g:ale_fix_on_save = 1
-let g:ale_floating_preview = 1
+let g:ale_virtualtext_cursor = 1
+let g:ale_floating_preview = 0
 let g:ale_hover_to_floating_preview = 1
-let g:ale_cursor_detail = 1
+let g:ale_cursor_detail = 0
 let g:ale_floating_window_border = []
 
 let g:ale_sign_error = '>>'
@@ -400,6 +375,4 @@ set secure " don't allow insecure commands in project specific vimrc files
 " Highlight yanked data {{{1
 " -----------------------------------------------------------------------------
 
-if !exists('##TextYankPost')
-  map y <Plug>(highlightedyank)
-endif
+au TextYankPost * silent! lua vim.highlight.on_yank()

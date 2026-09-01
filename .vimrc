@@ -1,19 +1,13 @@
 " vim:fdm=marker
 
 silent execute '!mkdir -p $HOME/.vim/tmp/undo'
-filetype plugin indent on
 
 " -----------------------------------------------------------------------------
 " important {{{1
 " -----------------------------------------------------------------------------
 
-set nocompatible         " use Vim defaults.
 set nopaste              " don't use stupid paste settings
-xnoremap p "_dP"         " don't put the content you paste over in the register
-set runtimepath+=~/.vim/snippets " adds snippets to our runtimepath
-set runtimepath+=~/.vim/my-snippets " adds snippets to our runtimepath
-
-set rtp+=/opt/homebrew/bin/fzf
+xnoremap p "_dP
 
 " trigger FZF by using <c-p> shortcut
 map <c-p> :Files<CR>
@@ -28,12 +22,6 @@ set incsearch            " do incremental search.
 set nohlsearch           " don't hightlight search results
 set ignorecase           " no case sensitivity please.
 set smartcase            " search case sensitive if i'm willing to.
-
-" -----------------------------------------------------------------------------
-" tags {{{1
-" -----------------------------------------------------------------------------
-
-set tags+=./tags;/       " Add our tags file
 
 " -----------------------------------------------------------------------------
 " displaying text {{{1
@@ -94,7 +82,6 @@ set clipboard=unnamed   " copy to our clipboard
 set backspace=indent,eol,start "specifies what backspace can do in insert mode
 set showmatch           " highlight matching brackets/showbraces.
 set completeopt=menu,preview,longest " style of autocomplete popup menu
-"set omnifunc=syntaxcomplete#Complete " function for filetype specific completion
 
 set shortmess+=c
 
@@ -105,7 +92,6 @@ set shortmess+=c
 set autoindent          " automatic indent new lines.
 set smartindent         " make it smart.
 set copyindent          " copy structure of existing lines.
-set cindent             " enable automatic C program indenting.
 set shiftwidth=4        " use four characters for indentation
 set softtabstop=4       " number of spaces inserted for a tab
 set tabstop=4           " number of spaces a tab stands for
@@ -119,7 +105,6 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab " other defaults for ya
 
 set autoread            " autoreload files after changes (works only in gui vim)
 set autowrite           " automatically write a file when leaving a modified buffer
-set fileformat=unix     " always use unix fileformat.
 
 " crontab can only be edited using these settings
 autocmd filetype crontab setlocal nobackup nowritebackup
@@ -155,6 +140,12 @@ set shell=bash
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
+" LSP navigation via coc
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " try <c-space> for autocompletion
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -177,18 +168,11 @@ function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-let g:coc_snippet_next = '<tab>'
 
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
-
-" -----------------------------------------------------------------------------
-" multi-byte characters {{{1
-" -----------------------------------------------------------------------------
-
-set encoding=utf-8       " force UTF-8 encoding.
 
 " -----------------------------------------------------------------------------
 " keybindings {{{1
@@ -203,9 +187,6 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-
-" This will enable us to have a nice choice with ctags
-nnoremap <C-]> g<C-]>
 
 " Hop from method to method
 nmap <c-n> ]]
@@ -229,7 +210,7 @@ let g:ale_php_phpcs_standard = 'PSR2'
 
 let g:ale_linters = {
 \   'php': ['php', 'phpcs', 'phpmd', 'phpstan', 'psalm'],
-\   'typescript': ['tsserver', 'tslint', 'prettier'],
+\   'typescript': ['tsserver'],
 \   'html': ['htmlhint'],
 \}
 
@@ -246,26 +227,6 @@ let g:ale_floating_window_border = []
 
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '>>'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ultisnips config {{{1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<c-tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim php namespace config {{{1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-noremap <Leader>u :call PhpInsertUse()<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim php refactoring toolbox config {{{1
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vim_php_refactoring_auto_validate_visibility = 1
-let g:vim_php_refactoring_default_property_visibility = 'private'
-let g:vim_php_refactoring_default_method_visibility = 'private'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " lightline config {{{1
@@ -328,9 +289,8 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-" use rg instead of ack
+" use rg for :grep
 if executable('rg')
-    let g:ackprg = 'rg --vimgrep'
     set grepprg=rg\ --vimgrep
     set grepformat^=%f:%l:%c:%m
 endif
@@ -338,31 +298,20 @@ endif
 " PHP Find Usage
 noremap <Leader>fu :call PhpUsage('<cword>')<CR>
 function! PhpUsage(word)
-    exe 'Ack "::' . a:word . '\(|>' . a:word . '\("'
+    execute 'silent grep!' shellescape('::' . a:word . '\(|>' . a:word . '\(')
 endfunction
 
 " PHP Find Implementations
 noremap <Leader>fi :call PhpImplementations('<cword>')<CR>
 function! PhpImplementations(word)
-    exe 'Ack "implements.*[ |,]' . a:word . '"'
+    execute 'silent grep!' shellescape('implements.*[ |,]' . a:word)
 endfunction
 
 " PHP Find Subclasses
 noremap <Leader>fe :call PhpSubclasses('<cword>')<CR>
 function! PhpSubclasses(word)
-    exe 'Ack "extends.*' . a:word . ' *($|{)"'
+    execute 'silent grep!' shellescape('extends.*' . a:word . ' *($|{)')
 endfunction
-
-" Add use statement and sort
-noremap <Leader>us :call PhpAddUseStatementAndSort()<CR>
-function! PhpAddUseStatementAndSort()
-    :call PhpInsertUse()
-    :call PhpSortUse()
-endfunction
-
-" sort php use statements
-autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
-autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
 
 " -----------------------------------------------------------------------------
 " project specific vimrc files {{{1
@@ -372,6 +321,7 @@ set exrc " allow projects to have their specific vimrc files
 set secure " don't allow insecure commands in project specific vimrc files
 
 " -----------------------------------------------------------------------------
+"
 " Highlight yanked data {{{1
 " -----------------------------------------------------------------------------
 

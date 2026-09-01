@@ -4,6 +4,11 @@ vim.cmd('source ~/.vimrc')
 
 vim.cmd('set inccommand=split " show substitute commands interactively')
 
+vim.g.python3_host_prog = vim.fn.expand("~/.config/nvim/venv/bin/python")
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -43,23 +48,26 @@ table.insert(plugins, { "junegunn/fzf" })
 table.insert(plugins, { "junegunn/fzf.vim" })
 table.insert(plugins, { "maximbaz/lightline-ale" })
 table.insert(plugins, { "itchyny/lightline.vim" })
-table.insert(plugins, { "dense-analysis/ale" })
-table.insert(plugins, { "arnaud-lb/vim-php-namespace" })
-table.insert(plugins, { "adoy/vim-php-refactoring-toolbox" })
-table.insert(plugins, { "sheerun/vim-polyglot" })
-table.insert(plugins, { "ludovicchabant/vim-gutentags" })
-table.insert(plugins, { "honza/vim-snippets" })
+table.insert(plugins, {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    lazy = false,
+    config = function()
+        require("nvim-treesitter.configs").setup({
+            ensure_installed = {
+                "bash", "css", "diff", "dockerfile", "gitcommit", "go",
+                "html", "javascript", "json", "lua", "markdown",
+                "markdown_inline", "php", "phpdoc", "python", "query",
+                "regex", "tsx", "typescript", "vim", "vimdoc", "yaml",
+            },
+            highlight = { enable = true },
+            indent    = { enable = true },
+            auto_install = true,
+        })
+    end,
+})
 table.insert(plugins, { "tpope/vim-fugitive" })
 table.insert(plugins, { "tpope/vim-rhubarb" })
-table.insert(plugins, { "SirVer/ultisnips" })
-table.insert(plugins, { "jiangmiao/auto-pairs" })
-table.insert(
-    plugins,
-    {
-        "mfussenegger/nvim-dap-python",
-        dependencies = { "mfussenegger/nvim-dap" },
-    }
-)
 
 table.insert(
     plugins,
@@ -97,6 +105,25 @@ table.insert(
         end
     }
 )
+table.insert(plugins, {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {},
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
+})
+
+table.insert(plugins, {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+})
 
 require("lazy").setup(plugins)
 
